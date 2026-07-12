@@ -10,6 +10,7 @@ const cardMeta: Record<string, { key: string; image: string }> = {
   beaches: { key: 'beaches', image: '/images/beach.svg' },
   gibraltar: { key: 'gibraltar', image: '/images/gibraltar.svg' },
   food: { key: 'food', image: '/images/food.svg' },
+  city: { key: 'city', image: '/images/hero.svg' },
 };
 
 const cards = guides.map((g) => ({
@@ -28,7 +29,7 @@ const cards = guides.map((g) => ({
       subtitle={t('destination.subtitle')}
     />
 
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
       {
         cards.map((card) => (
           <a

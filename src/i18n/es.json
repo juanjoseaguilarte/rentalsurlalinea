@@ -83,6 +83,10 @@
     "food": {
       "title": "Gastronomía y cultura",
       "desc": "Pescaíto frito, tapas con solera y el ambiente andaluz más auténtico en cada esquina."
+    },
+    "city": {
+      "title": "Una ciudad que renace",
+      "desc": "Millones en nuevos proyectos, barrios renovados y un litoral de postal: La Línea vive su mejor momento."
     }
   },
   "why": {

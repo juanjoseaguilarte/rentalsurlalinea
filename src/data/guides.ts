@@ -19,7 +19,7 @@ export interface GuideSection {
 }
 
 export interface Guide {
-  key: 'beaches' | 'gibraltar' | 'food';
+  key: 'beaches' | 'gibraltar' | 'food' | 'city';
   /** Mismo slug en ES y EN para que el cambio de idioma nunca rompa. */
   slug: string;
   title: Text2;
@@ -294,6 +294,95 @@ export const guides: Guide[] = [
     cta: {
       es: 'Ven con hambre: tu mesa junto al mar te espera.',
       en: 'Come hungry: your table by the sea is waiting.',
+    },
+  },
+  {
+    key: 'city',
+    slug: 'ciudad',
+    title: {
+      es: 'La Línea renace: una ciudad en su mejor momento',
+      en: 'La Línea reborn: a city at its finest moment',
+    },
+    metaDescription: {
+      es: 'Millones de euros en nuevos proyectos, barrios revitalizados con fondos europeos, un paseo marítimo renovado y el fin de la Verja: La Línea de la Concepción vive su mejor momento. Ven a descubrirla.',
+      en: 'Millions of euros in new projects, neighbourhoods revitalised with European funds, a renewed seafront promenade and the end of the border fence: La Línea de la Concepción is living its finest moment. Come and discover it.',
+    },
+    hero: {
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Wv_La_L%C3%ADnea_de_la_Concepci%C3%B3n%2C_from_the_Rock_of_Gibraltar_%28cropped%29.jpg/1280px-Wv_La_L%C3%ADnea_de_la_Concepci%C3%B3n%2C_from_the_Rock_of_Gibraltar_%28cropped%29.jpg',
+      fallback: '/images/hero.svg',
+      alt: {
+        es: 'Vista de La Línea de la Concepción desde el Peñón de Gibraltar',
+        en: 'View of La Línea de la Concepción from the Rock of Gibraltar',
+      },
+      creditUrl:
+        'https://commons.wikimedia.org/wiki/File:Wv_La_L%C3%ADnea_de_la_Concepci%C3%B3n,_from_the_Rock_of_Gibraltar_(cropped).jpg',
+    },
+    intro: {
+      es: 'Si hace años que no visitas La Línea, prepárate: no la vas a reconocer. La ciudad vive una transformación histórica — millones de euros en nuevos proyectos, barrios enteros renovados con fondos europeos, un litoral cada vez más cuidado y, como guinda, la desaparición de la Verja que la convierte en la puerta abierta entre Europa y Gibraltar. La Línea no es solo un destino: es una ciudad en pleno despegue, y visitarla ahora es verla nacer de nuevo.',
+      en: "If it's been years since you visited La Línea, get ready: you won't recognise it. The city is living through a historic transformation — millions of euros in new projects, whole neighbourhoods renewed with European funds, an ever more cared-for coastline and, as the icing on the cake, the removal of the border fence that makes it the open gateway between Europe and Gibraltar. La Línea isn't just a destination: it's a city taking off, and visiting now means watching it be reborn.",
+    },
+    sections: [
+      {
+        title: {
+          es: 'Una ciudad en plena transformación',
+          en: 'A city in full transformation',
+        },
+        text: {
+          es: 'Más de 20 millones de euros en nuevos proyectos están cambiando la cara de La Línea. El plan "La Línea Revitaliza", cofinanciado con fondos europeos, ha renovado el barrio marinero de La Atunara, y el histórico Mercado de la Concepción — declarado Bien de Interés Cultural — se rehabilita de forma integral para volver a ser el corazón de la ciudad. Calles, plazas y fachadas estrenan vida, y se nota en cada paseo.',
+          en: 'More than 20 million euros in new projects are changing the face of La Línea. The "La Línea Revitaliza" plan, co-financed with European funds, has renewed the seafaring quarter of La Atunara, and the historic Mercado de la Concepción — a listed heritage building — is being comprehensively restored to become the heart of the city once again. Streets, squares and façades are coming back to life, and you can feel it on every stroll.',
+        },
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iglesia_de_la_Inmaculada_en_La_L%C3%ADnea_de_la_Concepci%C3%B3n_2.jpg/1280px-Iglesia_de_la_Inmaculada_en_La_L%C3%ADnea_de_la_Concepci%C3%B3n_2.jpg',
+        fallback: '/images/hero.svg',
+        imageAlt: {
+          es: 'Iglesia de la Inmaculada, en el centro de La Línea de la Concepción',
+          en: 'Church of the Immaculate Conception, in the centre of La Línea',
+        },
+        creditUrl:
+          'https://commons.wikimedia.org/wiki/File:Iglesia_de_la_Inmaculada_en_La_L%C3%ADnea_de_la_Concepci%C3%B3n_2.jpg',
+      },
+      {
+        title: {
+          es: 'Un litoral cada vez más bonito',
+          en: 'A coastline getting prettier every year',
+        },
+        text: {
+          es: 'El Paseo de Poniente estrena zonas infantiles y áreas biosaludables renovadas, y muy pronto lucirá el gran fotocall con las letras de "LA LÍNEA", pensado para que te lleves la foto más bonita del viaje con el Peñón de fondo. Súmale las inversiones en La Alcaidesa y su puerto deportivo a los pies de Gibraltar: kilómetro a kilómetro, el litoral linense se está poniendo de postal.',
+          en: 'The Paseo de Poniente has brand-new children\'s play areas and renovated outdoor fitness zones, and will soon unveil the big "LA LÍNEA" letters photocall, designed for you to take home the best photo of your trip with the Rock in the background. Add the investments in La Alcaidesa and its marina at the foot of Gibraltar: kilometre by kilometre, La Línea\'s seafront is becoming picture-perfect.',
+        },
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/La_Linea_de_la_Concepcion_2.jpg/1280px-La_Linea_de_la_Concepcion_2.jpg',
+        fallback: '/images/beach.svg',
+        imageAlt: {
+          es: 'El litoral de La Línea de la Concepción',
+          en: "La Línea de la Concepción's coastline",
+        },
+        creditUrl: 'https://commons.wikimedia.org/wiki/File:La_Linea_de_la_Concepcion_2.jpg',
+      },
+      {
+        title: {
+          es: 'Bien conectada, bien servida y con futuro',
+          en: 'Well connected, well served and full of future',
+        },
+        text: {
+          es: 'La Línea cuenta con un moderno hospital universitario de referencia para toda la comarca, un comercio local en plena efervescencia y, desde julio de 2026, la mayor ventaja de todas: el paso libre a Gibraltar sin controles, que está atrayendo visitantes, inversión y vida a ambos lados. Todo el Campo de Gibraltar mira hacia aquí. Los que la conocemos lo tenemos claro: el mejor momento para descubrir La Línea es ahora.',
+          en: "La Línea has a modern university hospital serving the whole region, buzzing local commerce and, since July 2026, the greatest advantage of all: free passage to Gibraltar with no border checks, drawing visitors, investment and life to both sides. The whole Campo de Gibraltar is looking this way. Those of us who know the city are sure of it: the best time to discover La Línea is right now.",
+        },
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Rock_of_Gibraltar_from_the_Spanish_side_of_the_frontier.jpg/1280px-Rock_of_Gibraltar_from_the_Spanish_side_of_the_frontier.jpg',
+        fallback: '/images/gibraltar.svg',
+        imageAlt: {
+          es: 'El Peñón de Gibraltar desde La Línea de la Concepción',
+          en: 'The Rock of Gibraltar from La Línea de la Concepción',
+        },
+        creditUrl:
+          'https://commons.wikimedia.org/wiki/File:Rock_of_Gibraltar_from_the_Spanish_side_of_the_frontier.jpg',
+      },
+    ],
+    cta: {
+      es: 'Descubre la nueva La Línea antes que nadie.',
+      en: 'Discover the new La Línea before everyone else.',
     },
   },
 ];

@@ -83,6 +83,10 @@
     "food": {
       "title": "Food & culture",
       "desc": "Fried fish, classic tapas and the most authentic Andalusian atmosphere on every corner."
+    },
+    "city": {
+      "title": "A city reborn",
+      "desc": "Millions in new projects, renewed neighbourhoods and a picture-perfect seafront: La Línea is at its finest."
     }
   },
   "why": {
