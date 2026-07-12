@@ -24,13 +24,13 @@ export const site = {
     dateFormat: 'DD/MM/YYYY' as 'DD/MM/YYYY' | 'YYYY-MM-DD',
   },
 
-  // Contacto — PLACEHOLDERS, cámbialos por los reales
+  // Contacto
   contact: {
     email: 'rentalsurlalinea@gmail.com',
     // Teléfono en formato internacional sin espacios para tel: y wa.me
-    phone: '+34600000000', // PLACEHOLDER
-    phoneDisplay: '+34 600 000 000', // PLACEHOLDER
-    whatsapp: '34600000000', // PLACEHOLDER (sin +)
+    phone: '+34623182453',
+    phoneDisplay: '+34 623 18 24 53',
+    whatsapp: '34623182453', // sin +
     address: 'La Línea de la Concepción, Cádiz, España',
   },
 
