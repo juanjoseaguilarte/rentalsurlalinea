@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bahia de La Linea">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f7c98b"/>
-      <stop offset="0.35" stop-color="#e89a6b"/>
-      <stop offset="0.7" stop-color="#4d94b8"/>
-      <stop offset="1" stop-color="#163d52"/>
+      <stop offset="0" stop-color="#F0A88B"/>
+      <stop offset="0.35" stop-color="#E98A64"/>
+      <stop offset="0.7" stop-color="#4D6C8B"/>
+      <stop offset="1" stop-color="#16324F"/>
     </linearGradient>
     <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2a86ab"/>
-      <stop offset="1" stop-color="#0c2735"/>
+      <stop offset="0" stop-color="#4D6C8B"/>
+      <stop offset="1" stop-color="#0D2136"/>
     </linearGradient>
     <radialGradient id="sun" cx="0.72" cy="0.32" r="0.14">
       <stop offset="0" stop-color="#fff3d6"/>
@@ -20,8 +20,8 @@
   <circle cx="1382" cy="346" r="360" fill="url(#sun)"/>
   <circle cx="1382" cy="346" r="88" fill="#fff1cf"/>
   <!-- Penon de Gibraltar silueta -->
-  <path d="M0 640 L180 640 L360 700 L520 620 L560 620 L720 660 L860 640 L960 660 L960 720 L0 720 Z" fill="#2a5a6e" opacity="0.55"/>
-  <path d="M960 655 C1120 600 1260 580 1400 590 C1560 600 1720 640 1920 610 L1920 720 L960 720 Z" fill="#1f4d61" opacity="0.6"/>
+  <path d="M0 640 L180 640 L360 700 L520 620 L560 620 L720 660 L860 640 L960 660 L960 720 L0 720 Z" fill="#264260" opacity="0.55"/>
+  <path d="M960 655 C1120 600 1260 580 1400 590 C1560 600 1720 640 1920 610 L1920 720 L960 720 Z" fill="#1C3A57" opacity="0.6"/>
   <!-- Mar -->
   <rect y="700" width="1920" height="380" fill="url(#sea)"/>
   <g fill="#ffffff" opacity="0.12">

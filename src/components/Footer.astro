@@ -1,6 +1,7 @@
 ---
 import { getLocaleFromUrl, useTranslations, localizedPath } from '../i18n/ui';
 import { site, whatsappLink } from '../config/site';
+import Logo from './Logo.astro';
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -24,10 +25,7 @@ const legalLinks = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <!-- Marca -->
       <div class="lg:col-span-1">
-        <div class="flex items-center gap-2">
-          <span class="grid place-items-center h-9 w-9 rounded-xl bg-sea-600 text-white font-display font-semibold text-lg">R</span>
-          <span class="font-display font-semibold text-lg">Rentalsur <span class="text-sunset-400">La Línea</span></span>
-        </div>
+        <Logo variant="white" size={22} />
         <p class="mt-4 text-sm text-white/60 leading-relaxed max-w-xs">{t('footer.tagline')}</p>
         <div class="mt-5 flex gap-3">
           <a href={site.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" class="grid place-items-center h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors">

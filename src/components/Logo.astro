@@ -1,0 +1,95 @@
+---
+/*
+  Logotipo Rentalsur según las especificaciones de marca:
+  - "rental" Sora 700 minúsculas (ls −2%), "SUR" blanco en caja-casa coral,
+    "LA LÍNEA" Sora 600 con tracking amplio.
+  - Proporciones: rental 110 → SUR 71 → LA LÍNEA 39; tejado 0.73×SUR,
+    ancho 110% de la caja; esquinas inferiores redondeadas 0.37×SUR.
+  variant "color" (sobre blanco) | "white" (sobre azul/fotos, monocromo blanco).
+*/
+interface Props {
+  variant?: 'color' | 'white';
+  subtitle?: boolean;
+  /** Tamaño de fuente de "rental" en px (escala todo el conjunto). */
+  size?: number;
+  class?: string;
+}
+const { variant = 'color', subtitle = true, size = 22, class: className = '' } = Astro.props;
+---
+
+<span class:list={['rs-logo', `rs-${variant}`, className]} style={`--rs:${size}px`} translate="no">
+  <span class="rs-row">
+    <span class="rs-word">rental</span>
+    <span class="rs-house">
+      <svg class="rs-roof" viewBox="0 0 110 30" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M55 1 L108 29 L2 29 Z" stroke-width="2" stroke-linejoin="round" />
+      </svg>
+      <span class="rs-sur">SUR</span>
+    </span>
+  </span>
+  {subtitle && <span class="rs-sub">LA LÍNEA</span>}
+</span>
+
+<style>
+  .rs-logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-display);
+    line-height: 1;
+    user-select: none;
+  }
+  .rs-row {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: calc(var(--rs) * 0.22);
+  }
+  .rs-word {
+    font-size: var(--rs);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+  }
+  /* La caja-casa hereda el tamaño de SUR (0.645×rental) para usar em en padding/radio */
+  .rs-house {
+    position: relative;
+    display: inline-flex;
+    font-size: calc(var(--rs) * 0.645);
+    margin-top: calc(var(--rs) * 0.645 * 0.73); /* reserva la altura del tejado */
+  }
+  .rs-roof {
+    position: absolute;
+    bottom: 100%;
+    left: -5%;
+    width: 110%;
+    height: calc(var(--rs) * 0.645 * 0.73);
+  }
+  .rs-sur {
+    display: inline-block;
+    padding: 0.14em 0.45em 0.18em;
+    border-radius: 0 0 0.37em 0.37em;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+  }
+  .rs-sub {
+    margin-top: calc(var(--rs) * 0.22);
+    font-size: calc(var(--rs) * 0.355);
+    font-weight: 600;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em; /* compensa el tracking para centrar visualmente */
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Variante color (sobre blanco) */
+  .rs-color .rs-word { color: var(--color-sea-900); }
+  .rs-color .rs-sur { background: var(--color-sunset-500); color: #fff; }
+  .rs-color .rs-roof path { fill: var(--color-sunset-500); stroke: var(--color-sunset-500); }
+  .rs-color .rs-sub { color: var(--color-sand-400); }
+
+  /* Variante blanca (sobre azul marino / fotos) */
+  .rs-white .rs-word { color: #fff; }
+  .rs-white .rs-sur { background: #fff; color: var(--color-sea-900); }
+  .rs-white .rs-roof path { fill: #fff; stroke: #fff; }
+  .rs-white .rs-sub { color: var(--color-sea-300); }
+</style>

@@ -1,25 +1,20 @@
 ---
 import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
-import { site } from '../config/site';
+import { site, bookingHomeUrl } from '../config/site';
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
-const { baseUrl, searchPath, accommodationsPath, params } = site.booking;
-// Endpoint de búsqueda del motor (con prefijo de idioma) y fallback al listado.
-const langSeg = locale === 'en' ? 'en/' : '';
-const searchUrl = new URL(`${langSeg}${searchPath}`, baseUrl).toString();
-const fallbackUrl = new URL(`${langSeg}${accommodationsPath}`, baseUrl).toString();
+const { baseUrl, searchPath, dateFormat } = site.booking;
+const searchUrl = new URL(searchPath, baseUrl).toString();
+const fallbackUrl = bookingHomeUrl(locale);
 ---
 
 <form
   class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto_auto] gap-3 items-end"
   data-search-form
-  data-base-url={searchUrl}
+  data-search-url={searchUrl}
   data-fallback-url={fallbackUrl}
-  data-param-checkin={params.checkin}
-  data-param-checkout={params.checkout}
-  data-param-guests={params.guests}
-  data-param-lang={params.lang}
+  data-date-format={dateFormat}
   data-locale={locale}
 >
   <label class="block">
@@ -64,7 +59,7 @@ const fallbackUrl = new URL(`${langSeg}${accommodationsPath}`, baseUrl).toString
 
   <button
     type="submit"
-    class="h-[50px] inline-flex items-center justify-center gap-2 rounded-xl bg-sea-600 hover:bg-sea-700 text-white font-semibold px-5 transition-colors whitespace-nowrap"
+    class="h-[50px] inline-flex items-center justify-center gap-2 rounded-xl bg-sea-900 hover:bg-sea-700 text-white font-semibold px-5 transition-colors whitespace-nowrap"
   >
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
     {t('hero.search')}
@@ -72,28 +67,38 @@ const fallbackUrl = new URL(`${langSeg}${accommodationsPath}`, baseUrl).toString
 </form>
 
 <script>
-  // Construye la URL del motor Kross y la abre en pestaña nueva.
-  // Fallback seguro: si algo falla, abre la URL base.
+  // Construye la URL /book/step1 del motor Kross (mismo formato que rentalbenidorm)
+  // y la abre en pestaña nueva. Fallback seguro: sin fechas → listado de alojamientos.
   document.querySelectorAll('[data-search-form]').forEach((formEl) => {
     const form = formEl as HTMLFormElement;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const base = form.dataset.baseUrl || '';
-      const fallback = form.dataset.fallbackUrl || base;
+      const fallback = form.dataset.fallbackUrl || '';
       try {
         const data = new FormData(form);
-        const checkin = data.get('checkin')?.toString();
-        const checkout = data.get('checkout')?.toString();
-        const guests = data.get('guests')?.toString();
-        // Sin fechas: abrir directamente el listado de alojamientos del motor.
+        const checkin = data.get('checkin')?.toString() ?? '';
+        const checkout = data.get('checkout')?.toString() ?? '';
+        const guests = Number(data.get('guests')) || 2;
         if (!checkin && !checkout) {
           window.open(fallback, '_blank', 'noopener');
           return;
         }
-        const url = new URL(base);
-        if (checkin && form.dataset.paramCheckin) url.searchParams.set(form.dataset.paramCheckin, checkin);
-        if (checkout && form.dataset.paramCheckout) url.searchParams.set(form.dataset.paramCheckout, checkout);
-        if (guests && form.dataset.paramGuests) url.searchParams.set(form.dataset.paramGuests, guests);
+        const fmt = (iso: string) => {
+          if (!iso) return '';
+          if (form.dataset.dateFormat === 'YYYY-MM-DD') return iso;
+          const [y, m, d] = iso.split('-');
+          return `${d}/${m}/${y}`;
+        };
+        const url = new URL(form.dataset.searchUrl || fallback);
+        url.searchParams.set('adults', String(guests));
+        url.searchParams.set('children', '0');
+        url.searchParams.set('rooms', '1');
+        url.searchParams.set('guests', String(guests));
+        url.searchParams.set('n_guests', String(guests));
+        url.searchParams.set('guests_rooms', `${guests},0;`);
+        url.searchParams.set('kross_lang', form.dataset.locale || 'es');
+        url.searchParams.set('from', fmt(checkin));
+        url.searchParams.set('to', fmt(checkout));
         window.open(url.toString(), '_blank', 'noopener');
       } catch {
         window.open(fallback, '_blank', 'noopener');

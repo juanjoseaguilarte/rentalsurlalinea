@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Casa familiar">
-  <defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4ebf4"/><stop offset="1" stop-color="#72bcda"/></linearGradient></defs>
+  <defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E0E8F0"/><stop offset="1" stop-color="#9FB0C0"/></linearGradient></defs>
   <rect width="800" height="600" fill="url(#bg3)"/>
   <circle cx="650" cy="120" r="50" fill="#fff3d6" opacity="0.9"/>
   <rect y="440" width="800" height="160" fill="#cba471" opacity="0.5"/>
   <!-- casa -->
   <rect x="220" y="260" width="360" height="220" fill="#fbf8f2"/>
-  <path d="M200 260 L400 150 L600 260 Z" fill="#d66a28"/>
-  <g fill="#154961" opacity="0.85">
+  <path d="M200 260 L400 150 L600 260 Z" fill="#C95A36"/>
+  <g fill="#16324F" opacity="0.85">
     <rect x="260" y="300" width="80" height="80" rx="4"/><rect x="460" y="300" width="80" height="80" rx="4"/>
-    <rect x="360" y="360" width="80" height="120" rx="4" fill="#e8843a"/>
+    <rect x="360" y="360" width="80" height="120" rx="4" fill="#E0704A"/>
   </g>
-  <circle cx="150" cy="470" r="40" fill="#154961" opacity="0.3"/>
+  <circle cx="150" cy="470" r="40" fill="#16324F" opacity="0.3"/>
 </svg>

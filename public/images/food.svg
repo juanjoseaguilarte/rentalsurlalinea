@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="700" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gastronomia">
-  <defs><linearGradient id="fbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0a05a"/><stop offset="1" stop-color="#d66a28"/></linearGradient></defs>
+  <defs><linearGradient id="fbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E98A64"/><stop offset="1" stop-color="#C95A36"/></linearGradient></defs>
   <rect width="800" height="700" fill="url(#fbg)"/>
   <circle cx="400" cy="360" r="230" fill="#fbf8f2"/>
-  <circle cx="400" cy="360" r="230" fill="none" stroke="#e8843a" stroke-width="14" opacity="0.4"/>
+  <circle cx="400" cy="360" r="230" fill="none" stroke="#E0704A" stroke-width="14" opacity="0.4"/>
   <circle cx="400" cy="360" r="150" fill="#f4ecde"/>
   <!-- tapas -->
-  <circle cx="360" cy="330" r="42" fill="#e8843a"/>
-  <circle cx="450" cy="380" r="34" fill="#154961" opacity="0.75"/>
+  <circle cx="360" cy="330" r="42" fill="#E0704A"/>
+  <circle cx="450" cy="380" r="34" fill="#16324F" opacity="0.75"/>
   <circle cx="380" cy="420" r="28" fill="#cba471"/>
-  <g stroke="#154961" stroke-width="10" stroke-linecap="round" opacity="0.8">
+  <g stroke="#16324F" stroke-width="10" stroke-linecap="round" opacity="0.8">
     <path d="M150 250 v200"/><path d="M175 250 v200"/>
     <path d="M650 250 q30 40 0 90 v110"/>
   </g>

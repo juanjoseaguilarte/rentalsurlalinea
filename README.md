@@ -54,9 +54,18 @@ seguro), así que nunca queda un botón "roto".
 - **Vercel**: importa el repositorio (Astro se autodetecta). Los formularios harán
   *fallback* a `mailto:` abriendo el cliente de correo del visitante.
 
+## Marca
+
+Branding aplicado según las especificaciones del logotipo: tipografía **Sora**,
+azul marino `#16324F`, coral `#E0704A`, grises `#8A97A3`/`#9FB0C0`. El logo es el
+componente `src/components/Logo.astro` (variantes `color`/`white`, construcción
+caja-casa según especificaciones) y el favicon usa el monograma "rs" vectorial real.
+
 ## Pendiente (cuando tengas el material)
 
-- Logo, fotos reales de los apartamentos y colores de marca.
+- Fotos reales de los apartamentos (sustituyen a las ilustraciones de `public/images/`).
 - Teléfono/WhatsApp e Instagram/Facebook reales (`src/config/site.ts`).
-- Nombres y enlaces Kross reales de cada propiedad.
+- Nombres reales y `krossRoomId` de cada propiedad (`src/data/properties.ts`).
+- Verificar que el motor recoge las fechas del buscador; si no, cambiar
+  `booking.dateFormat` a `'YYYY-MM-DD'` en `src/config/site.ts`.
 - Textos legales definitivos (aviso legal, privacidad, cookies).

@@ -1,39 +1,41 @@
 @import 'tailwindcss';
 
 /*
-  Paleta costera andaluza — Rentalsur La Línea
-  Todos los colores de marca están aquí. Cuando tengas los colores reales,
-  cambia estos tokens y toda la web se re-tematiza sola.
+  Paleta de marca Rentalsur La Línea (ver especificaciones del logotipo):
+    Azul marino  #16324F   Coral  #E0704A
+    Gris #8A97A3 (sobre blanco)   Gris claro #9FB0C0 (sobre azul)
+  Las escalas sea-* y sunset-* se derivan de esos dos colores.
 */
 @theme {
-  /* Azul mar / bahía de Gibraltar */
-  --color-sea-50: #eef7fb;
-  --color-sea-100: #d4ebf4;
-  --color-sea-200: #a9d7e9;
-  --color-sea-300: #72bcda;
-  --color-sea-400: #3d9cc4;
-  --color-sea-500: #1f7fab;
-  --color-sea-600: #16688f;
-  --color-sea-700: #145575;
-  --color-sea-800: #154961;
-  --color-sea-900: #163d52;
-  --color-sea-950: #0c2735;
+  /* Azul marino de marca (#16324F = sea-900) */
+  --color-sea-50: #f2f5f9;
+  --color-sea-100: #e0e8f0;
+  --color-sea-200: #c3d2e1;
+  --color-sea-300: #9fb0c0; /* gris claro de marca */
+  --color-sea-400: #6f89a3;
+  --color-sea-500: #4d6c8b;
+  --color-sea-600: #345474;
+  --color-sea-700: #264260;
+  --color-sea-800: #1c3a57;
+  --color-sea-900: #16324f; /* azul marino de marca */
+  --color-sea-950: #0d2136;
 
-  /* Arena / cálidos */
-  --color-sand-50: #fbf8f2;
-  --color-sand-100: #f4ecde;
-  --color-sand-200: #e8d7bd;
-  --color-sand-300: #d9bd93;
-  --color-sand-400: #cba471;
+  /* Neutros fríos para fondos de sección */
+  --color-sand-50: #f5f7f9;
+  --color-sand-100: #e9edf2;
+  --color-sand-200: #d5dde5;
+  --color-sand-300: #b8c5d1;
+  --color-sand-400: #8a97a3; /* gris de marca */
 
-  /* Acento atardecer (terracota / dorado) */
-  --color-sunset-400: #f0a05a;
-  --color-sunset-500: #e8843a;
-  --color-sunset-600: #d66a28;
-  --color-sunset-700: #b25322;
+  /* Coral de marca (#E0704A = sunset-500) */
+  --color-sunset-300: #f0a88b;
+  --color-sunset-400: #e98a64;
+  --color-sunset-500: #e0704a; /* coral de marca */
+  --color-sunset-600: #c95a36;
+  --color-sunset-700: #a8482a;
 
-  /* Tipografías */
-  --font-display: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+  /* Tipografías: Sora (marca) para titulares, Inter para texto */
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -56,7 +58,7 @@ body {
 
 h1, h2, h3, .font-display {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
+  letter-spacing: -0.02em; /* como el wordmark "rental" */
 }
 
 /* Utilidades de composición */
