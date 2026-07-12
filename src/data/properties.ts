@@ -13,9 +13,13 @@ export interface Property {
   /** Alternativa: pega la URL completa de la ficha en el motor (si no usas krossRoomId). */
   krossUrl?: string;
   image: string;
+  /** Galería de fotos (URLs absolutas del CDN de Kross o rutas locales). */
+  gallery?: string[];
   guests: number;
   bedrooms: number;
   bathrooms: number;
+  /** Superficie en m² (opcional). */
+  sqm?: number;
   /** Zona/barrio para mostrar y para SEO local. */
   area: { es: string; en: string };
   short: { es: string; en: string };
@@ -36,27 +40,40 @@ export interface Property {
 */
 export const properties: Property[] = [
   {
-    // ✅ PROPIEDAD REAL — enlace verificado al motor. Ajusta huéspedes/dormitorios/
-    // descripción cuando me pases los datos reales de la ficha.
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-a1',
-    name: 'Rockside Suites A1',
+    name: 'RockSide Suites A1',
     krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-a1',
-    image: '/images/apartment-1.svg',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461564095.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461588394.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461587575.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746159994.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461601242.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461609450.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461618482.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461619083.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/17757461622017.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746162935.webp',
+    ],
     guests: 4,
     bedrooms: 1,
     bathrooms: 1,
+    sqm: 40,
     area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
     short: {
-      es: 'Suite moderna y equipada, con el Peñón de Gibraltar a un paso.',
-      en: 'Modern, fully equipped suite, steps from the Rock of Gibraltar.',
+      es: 'Suite moderna de 40 m² para 4 personas, con el Peñón de Gibraltar a un paso.',
+      en: 'Modern 40 m² suite for 4 guests, steps from the Rock of Gibraltar.',
     },
     description: {
-      es: 'Rockside Suites A1 es una suite moderna y totalmente equipada en La Línea de la Concepción, perfecta para parejas y viajeros que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
-      en: 'Rockside Suites A1 is a modern, fully equipped suite in La Línea de la Concepción, perfect for couples and travellers looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
+      es: 'RockSide Suites A1 es una suite moderna de 40 m² totalmente equipada en La Línea de la Concepción, con capacidad para 4 personas. Perfecta para parejas y familias que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites A1 is a modern, fully equipped 40 m² suite in La Línea de la Concepción, sleeping up to 4 guests. Perfect for couples and families looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
     },
     features: {
-      es: ['Junto a Gibraltar', 'Wi-Fi de alta velocidad', 'Aire acondicionado', 'Cocina equipada', 'Check-in flexible 24h'],
-      en: ['Next to Gibraltar', 'High-speed Wi-Fi', 'Air conditioning', 'Equipped kitchen', 'Flexible 24h check-in'],
+      es: ['40 m²', 'Hasta 4 personas', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['40 m²', 'Up to 4 guests', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
     },
   },
   {
