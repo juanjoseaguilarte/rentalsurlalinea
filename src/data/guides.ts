@@ -143,18 +143,18 @@ export const guides: Guide[] = [
         'https://commons.wikimedia.org/wiki/File:Rock_of_Gibraltar_from_the_Spanish_side_of_the_frontier.jpg',
     },
     intro: {
-      es: 'Hay experiencias que solo puedes vivir en un lugar del mundo, y esta es una de ellas: alojarte en La Línea es dormir en España y cruzar andando a otro país antes del desayuno. Gibraltar está literalmente al final de la calle — la única frontera peatonal de su tipo, a unos minutos de tu apartamento. Ninguna otra ciudad te ofrece dos países, dos culturas y dos gastronomías en un mismo día, sin coche y sin planes complicados.',
-      en: "Some experiences can only be lived in one place in the world, and this is one of them: staying in La Línea means sleeping in Spain and walking into another country before breakfast. Gibraltar is literally at the end of the street — a one-of-a-kind pedestrian border, minutes from your apartment. No other city offers you two countries, two cultures and two cuisines in a single day, no car and no complicated plans.",
+      es: 'Hay experiencias que solo puedes vivir en un lugar del mundo, y esta es una de ellas: alojarte en La Línea es dormir en España y pasear a otro país antes del desayuno. Y desde julio de 2026 es aún más fácil: la histórica Verja ha desaparecido y se cruza a Gibraltar libremente, sin enseñar pasaporte. El Peñón está literalmente al final de la calle, a unos minutos de tu apartamento. Ninguna otra ciudad te ofrece dos países, dos culturas y dos gastronomías en un mismo día, sin coche, sin colas y sin planes complicados.',
+      en: "Some experiences can only be lived in one place in the world, and this is one of them: staying in La Línea means sleeping in Spain and strolling into another country before breakfast. And since July 2026 it's even easier: the historic border fence is gone and you cross into Gibraltar freely, with no passport checks. The Rock is literally at the end of the street, minutes from your apartment. No other city offers you two countries, two cultures and two cuisines in a single day — no car, no queues, no complicated plans.",
     },
     sections: [
       {
         title: {
-          es: 'Cruza la frontera andando (y la pista de un aeropuerto)',
-          en: 'Cross the border on foot (and an airport runway)',
+          es: 'Sin Verja y sin controles: pasea a otro país',
+          en: 'No fence, no checks: stroll into another country',
         },
         text: {
-          es: 'Con tu DNI o pasaporte en el bolsillo, en cuestión de minutos estás al otro lado. Y nada más entrar te espera algo único en el mundo: cruzar a pie la pista del aeropuerto de Gibraltar, donde los aviones aterrizan a pocos metros de los peatones. Es el comienzo perfecto para un día de exploración que tus fotos no van a saber explicar.',
-          en: "With your ID or passport in your pocket, you're on the other side in a matter of minutes. And as soon as you enter, something unique in the world awaits: walking across the runway of Gibraltar airport, where planes land a few metres from pedestrians. It's the perfect start to a day of exploring your photos won't quite know how to explain.",
+          es: 'El 15 de julio de 2026 pasó a la historia: tras más de un siglo, la Verja de Gibraltar desapareció y el Peñón se integró en el espacio Schengen. Hoy se entra andando, libremente, sin enseñar pasaporte y sin colas. Y nada más cruzar te espera algo único en el mundo: atravesar a pie la pista del aeropuerto de Gibraltar, donde los aviones aterrizan a pocos metros de los peatones. Estás viviendo un momento histórico — y tu apartamento está a diez minutos.',
+          en: "On 15 July 2026, history was made: after more than a century, the Gibraltar border fence came down and the Rock joined the Schengen area. Today you simply walk in — freely, no passport checks, no queues. And right after crossing, something unique in the world awaits: walking across the runway of Gibraltar airport, where planes land a few metres from pedestrians. You're living a historic moment — and your apartment is ten minutes away.",
         },
         image:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/La_Linea_overlooking_Gibraltar.JPG/1280px-La_Linea_overlooking_Gibraltar.JPG',
