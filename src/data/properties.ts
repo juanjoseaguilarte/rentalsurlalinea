@@ -36,25 +36,27 @@ export interface Property {
 */
 export const properties: Property[] = [
   {
-    slug: 'apartamento-atunara-playa',
-    name: 'Apartamento Atunara Playa',
-    krossUrl: '',
+    // ✅ PROPIEDAD REAL — enlace verificado al motor. Ajusta huéspedes/dormitorios/
+    // descripción cuando me pases los datos reales de la ficha.
+    slug: 'rockside-suites-a1',
+    name: 'Rockside Suites A1',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-a1',
     image: '/images/apartment-1.svg',
     guests: 4,
-    bedrooms: 2,
+    bedrooms: 1,
     bathrooms: 1,
-    area: { es: 'La Atunara', en: 'La Atunara' },
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
     short: {
-      es: 'Luminoso apartamento a metros de la playa de La Atunara.',
-      en: 'Bright apartment steps from La Atunara beach.',
+      es: 'Suite moderna y equipada, con el Peñón de Gibraltar a un paso.',
+      en: 'Modern, fully equipped suite, steps from the Rock of Gibraltar.',
     },
     description: {
-      es: 'Apartamento reformado a pocos metros del paseo marítimo de La Atunara. Perfecto para familias: dos dormitorios, cocina totalmente equipada y terraza para disfrutar de las tardes de verano. A un paseo del mejor pescaíto de La Línea.',
-      en: 'Renovated apartment just steps from La Atunara seafront. Ideal for families: two bedrooms, a fully equipped kitchen and a terrace for summer evenings. A short walk from the best fried fish in La Línea.',
+      es: 'Rockside Suites A1 es una suite moderna y totalmente equipada en La Línea de la Concepción, perfecta para parejas y viajeros que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'Rockside Suites A1 is a modern, fully equipped suite in La Línea de la Concepción, perfect for couples and travellers looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
     },
     features: {
-      es: ['A 2 min de la playa', 'Wi-Fi de alta velocidad', 'Aire acondicionado', 'Cocina equipada', 'Terraza'],
-      en: ['2 min to the beach', 'High-speed Wi-Fi', 'Air conditioning', 'Equipped kitchen', 'Terrace'],
+      es: ['Junto a Gibraltar', 'Wi-Fi de alta velocidad', 'Aire acondicionado', 'Cocina equipada', 'Check-in flexible 24h'],
+      en: ['Next to Gibraltar', 'High-speed Wi-Fi', 'Air conditioning', 'Equipped kitchen', 'Flexible 24h check-in'],
     },
   },
   {
@@ -128,6 +130,14 @@ export const properties: Property[] = [
 /** Enlace de reserva de una propiedad: su ficha Kross si se conoce, o el listado. */
 export function propertyBookingUrl(p: Property, locale: Locale): string {
   if (p.krossRoomId !== undefined && p.krossRoomId !== '') return roomUrl(p.krossRoomId, locale);
-  if (p.krossUrl && p.krossUrl.length > 0) return p.krossUrl;
+  if (p.krossUrl && p.krossUrl.length > 0) {
+    // En inglés, pedir al motor esa versión (mismo formato que usa rentalbenidorm)
+    if (locale === 'en') {
+      const url = new URL(p.krossUrl);
+      if (!url.searchParams.has('lang')) url.searchParams.set('lang', 'en');
+      return url.toString();
+    }
+    return p.krossUrl;
+  }
   return bookingHomeUrl(locale);
 }
