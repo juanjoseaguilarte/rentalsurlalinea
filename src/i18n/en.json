@@ -88,9 +88,77 @@
     "formName": "Name",
     "formEmail": "Email",
     "formPhone": "Phone",
-    "formMessage": "Tell us about your property",
+    "formMessage": "Tell us about your property (optional)",
     "formSend": "Send",
-    "formSuccess": "Thank you! We'll be in touch very soon."
+    "formSuccess": "Thank you! We'll be in touch very soon.",
+    "wizard": {
+      "intro": "Tell us about your property",
+      "stepOf": "Question {n} of {total}",
+      "back": "Back",
+      "type": {
+        "q": "What type of property do you have?",
+        "flat": "Flat / Apartment",
+        "house": "House / Villa",
+        "studio": "Studio",
+        "other": "Other"
+      },
+      "zone": {
+        "q": "Where is it located?",
+        "center": "Town centre",
+        "beach": "Beach (Levante, Poniente, Atunara)",
+        "otherZone": "Another area of La Línea",
+        "surroundings": "Surroundings"
+      },
+      "operating": {
+        "q": "Do you already rent it to tourists?",
+        "yes": "Yes, already renting",
+        "no": "No, starting from scratch"
+      },
+      "portals": {
+        "q": "Which portals is it listed on?",
+        "airbnb": "Airbnb",
+        "booking": "Booking",
+        "both": "Airbnb and Booking",
+        "direct": "Direct / others"
+      },
+      "license": {
+        "q": "Do you have a tourist licence (VUT)?",
+        "yes": "Yes",
+        "no": "No",
+        "unknown": "I don't know"
+      },
+      "community": {
+        "q": "Does your building's community allow tourist rentals?",
+        "note": "Don't worry — we'll guide you through the licence and regulations, no strings attached.",
+        "yes": "Yes",
+        "no": "No",
+        "unknown": "I don't know"
+      },
+      "availability": {
+        "q": "What availability would it have?",
+        "allYear": "All year round",
+        "seasonal": "Seasons only",
+        "unknown": "I don't know yet"
+      },
+      "contact": {
+        "q": "Last step! How do we reach you?"
+      },
+      "summaryLabels": {
+        "type": "Type",
+        "zone": "Area",
+        "operating": "Already renting",
+        "portals": "Portals",
+        "license": "VUT licence",
+        "community": "Community allows",
+        "availability": "Availability"
+      },
+      "success": {
+        "title": "Thank you! We've received your request.",
+        "body": "We'll be in touch very soon. If you prefer, also send us the summary on WhatsApp and let's talk now.",
+        "whatsapp": "Send via WhatsApp"
+      },
+      "waIntro": "Hi! I'm a property owner interested in having my home managed."
+    }
   },
   "contact": {
     "eyebrow": "Let's talk",

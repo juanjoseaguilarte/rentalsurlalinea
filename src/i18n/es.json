@@ -88,9 +88,77 @@
     "formName": "Nombre",
     "formEmail": "Email",
     "formPhone": "Teléfono",
-    "formMessage": "Cuéntanos sobre tu vivienda",
+    "formMessage": "Cuéntanos sobre tu vivienda (opcional)",
     "formSend": "Enviar",
-    "formSuccess": "¡Gracias! Te contactaremos muy pronto."
+    "formSuccess": "¡Gracias! Te contactaremos muy pronto.",
+    "wizard": {
+      "intro": "Cuéntanos sobre tu vivienda",
+      "stepOf": "Pregunta {n} de {total}",
+      "back": "Atrás",
+      "type": {
+        "q": "¿Qué tipo de vivienda tienes?",
+        "flat": "Piso / Apartamento",
+        "house": "Casa / Chalet",
+        "studio": "Estudio",
+        "other": "Otro"
+      },
+      "zone": {
+        "q": "¿En qué zona está?",
+        "center": "Centro",
+        "beach": "Playa (Levante, Poniente, Atunara)",
+        "otherZone": "Otra zona de La Línea",
+        "surroundings": "Alrededores"
+      },
+      "operating": {
+        "q": "¿Ya la alquilas a turistas?",
+        "yes": "Sí, ya la alquilo",
+        "no": "No, empiezo de cero"
+      },
+      "portals": {
+        "q": "¿En qué portales la tienes?",
+        "airbnb": "Airbnb",
+        "booking": "Booking",
+        "both": "Airbnb y Booking",
+        "direct": "Directo / otros"
+      },
+      "license": {
+        "q": "¿Tienes licencia turística (VUT)?",
+        "yes": "Sí",
+        "no": "No",
+        "unknown": "No lo sé"
+      },
+      "community": {
+        "q": "¿Tu comunidad de vecinos permite el alquiler turístico?",
+        "note": "Tranquilo, te asesoramos con la licencia y la normativa sin compromiso.",
+        "yes": "Sí",
+        "no": "No",
+        "unknown": "No lo sé"
+      },
+      "availability": {
+        "q": "¿Qué disponibilidad tendría?",
+        "allYear": "Todo el año",
+        "seasonal": "Solo temporadas",
+        "unknown": "Aún no lo sé"
+      },
+      "contact": {
+        "q": "¡Último paso! ¿Cómo te contactamos?"
+      },
+      "summaryLabels": {
+        "type": "Tipo",
+        "zone": "Zona",
+        "operating": "Ya alquila",
+        "portals": "Portales",
+        "license": "Licencia VUT",
+        "community": "Comunidad permite",
+        "availability": "Disponibilidad"
+      },
+      "success": {
+        "title": "¡Gracias! Hemos recibido tu solicitud.",
+        "body": "Te contactaremos muy pronto. Si lo prefieres, envíanos también el resumen por WhatsApp y hablamos ya.",
+        "whatsapp": "Enviar por WhatsApp"
+      },
+      "waIntro": "¡Hola! Soy propietario y me interesa la gestión de mi vivienda."
+    }
   },
   "contact": {
     "eyebrow": "Hablemos",

@@ -1,12 +1,11 @@
 ---
 import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
-import { site } from '../config/site';
+import OwnersWizard from './OwnersWizard.astro';
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 
 const benefits = ['income', 'hassle', 'channels', 'care'];
-const mailto = `mailto:${site.contact.email}?subject=${encodeURIComponent('Gestión de vivienda - Rentalsur La Línea')}`;
 ---
 
 <section id="propietarios" class="py-20 sm:py-24 scroll-mt-24">
@@ -37,48 +36,9 @@ const mailto = `mailto:${site.contact.email}?subject=${encodeURIComponent('Gesti
         </ul>
       </div>
 
-      <!-- Formulario -->
-      <div class="reveal rounded-3xl bg-sand-50 ring-1 ring-sea-950/5 p-6 sm:p-8 shadow-sm">
-        <form
-          name="propietarios"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action={mailto}
-          data-ajax-form
-          data-mailto={mailto}
-          data-success={t('owners.formSuccess')}
-          class="space-y-4"
-        >
-          <input type="hidden" name="form-name" value="propietarios" />
-          <p class="hidden">
-            <label>No rellenar: <input name="bot-field" /></label>
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <label class="block">
-              <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('owners.formName')}</span>
-              <input name="nombre" type="text" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
-            </label>
-            <label class="block">
-              <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('owners.formPhone')}</span>
-              <input name="telefono" type="tel" class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
-            </label>
-          </div>
-          <label class="block">
-            <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('owners.formEmail')}</span>
-            <input name="email" type="email" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
-          </label>
-          <label class="block">
-            <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('owners.formMessage')}</span>
-            <textarea name="mensaje" rows="4" class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"></textarea>
-          </label>
-
-          <button type="submit" class="w-full inline-flex justify-center items-center rounded-full bg-sea-600 hover:bg-sea-700 text-white font-semibold px-5 py-3 transition-colors">
-            {t('owners.formSend')}
-          </button>
-          <p class="text-sm font-medium text-sea-700 hidden" data-success-msg></p>
-        </form>
+      <!-- Asistente conversacional -->
+      <div class="reveal">
+        <OwnersWizard />
       </div>
     </div>
   </div>

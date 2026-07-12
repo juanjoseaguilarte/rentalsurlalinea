@@ -24,7 +24,8 @@ const fallbackUrl = bookingHomeUrl(locale);
     <input
       type="date"
       name="checkin"
-      class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-3 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
+      placeholder={locale === 'es' ? 'dd/mm/aaaa' : 'dd/mm/yyyy'}
+      class="date-field w-full rounded-xl border border-sea-200 bg-white px-3.5 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
     />
   </label>
 
@@ -35,7 +36,8 @@ const fallbackUrl = bookingHomeUrl(locale);
     <input
       type="date"
       name="checkout"
-      class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-3 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
+      placeholder={locale === 'es' ? 'dd/mm/aaaa' : 'dd/mm/yyyy'}
+      class="date-field w-full rounded-xl border border-sea-200 bg-white px-3.5 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
     />
   </label>
 
@@ -66,11 +68,50 @@ const fallbackUrl = bookingHomeUrl(locale);
   </button>
 </form>
 
+<style>
+  /*
+    Arreglos para <input type="date"> en iOS Safari:
+    - Sin appearance:none, Safari ignora el ancho y el campo se sale de la tarjeta.
+    - Altura fija para que el campo vacío no colapse ni crezca.
+    - iOS no muestra ninguna pista cuando está vacío → ::before con el placeholder
+      (solo en iOS, para no duplicar el texto que ya pinta Chrome/desktop).
+  */
+  .date-field {
+    -webkit-appearance: none;
+    appearance: none;
+    min-width: 0;
+    height: 50px;
+    display: block;
+  }
+  .date-field::-webkit-date-and-time-value {
+    text-align: left;
+  }
+  @supports (-webkit-touch-callout: none) {
+    .date-field {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .date-field:not(.has-value):not(:focus)::before {
+      content: attr(placeholder);
+      color: rgb(22 50 79 / 0.45);
+      pointer-events: none;
+    }
+  }
+</style>
+
 <script>
   // Construye la URL /book/step1 del motor Kross (mismo formato que rentalbenidorm)
   // y la abre en pestaña nueva. Fallback seguro: sin fechas → listado de alojamientos.
   document.querySelectorAll('[data-search-form]').forEach((formEl) => {
     const form = formEl as HTMLFormElement;
+    // iOS: alternar .has-value para ocultar el placeholder ::before al elegir fecha
+    form.querySelectorAll<HTMLInputElement>('input[type="date"]').forEach((inp) => {
+      const sync = () => inp.classList.toggle('has-value', !!inp.value);
+      inp.addEventListener('input', sync);
+      inp.addEventListener('change', sync);
+      sync();
+    });
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const fallback = form.dataset.fallbackUrl || '';

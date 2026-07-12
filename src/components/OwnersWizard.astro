@@ -1,0 +1,375 @@
+---
+/*
+  Asistente conversacional para captación de propietarios.
+  Preguntas ramificadas: cada paso puede tener una condición `when`
+  (declarativa, serializable) que se evalúa sobre las respuestas acumuladas.
+  Envío: POST Netlify Forms → fallback mailto. Éxito con botón WhatsApp.
+*/
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import { site } from '../config/site';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const w = (k: string) => t(`owners.wizard.${k}`);
+
+// when: [{ field, in: [...] }] — el paso se muestra si TODAS las condiciones se cumplen
+const steps = [
+  {
+    id: 'type',
+    q: w('type.q'),
+    options: [
+      { v: 'flat', label: w('type.flat') },
+      { v: 'house', label: w('type.house') },
+      { v: 'studio', label: w('type.studio') },
+      { v: 'other', label: w('type.other') },
+    ],
+  },
+  {
+    id: 'zone',
+    q: w('zone.q'),
+    options: [
+      { v: 'center', label: w('zone.center') },
+      { v: 'beach', label: w('zone.beach') },
+      { v: 'otherZone', label: w('zone.otherZone') },
+      { v: 'surroundings', label: w('zone.surroundings') },
+    ],
+  },
+  {
+    id: 'operating',
+    q: w('operating.q'),
+    options: [
+      { v: 'yes', label: w('operating.yes') },
+      { v: 'no', label: w('operating.no') },
+    ],
+  },
+  {
+    id: 'portals',
+    q: w('portals.q'),
+    when: [{ field: 'operating', in: ['yes'] }],
+    options: [
+      { v: 'airbnb', label: w('portals.airbnb') },
+      { v: 'booking', label: w('portals.booking') },
+      { v: 'both', label: w('portals.both') },
+      { v: 'direct', label: w('portals.direct') },
+    ],
+  },
+  {
+    id: 'license',
+    q: w('license.q'),
+    options: [
+      { v: 'yes', label: w('license.yes') },
+      { v: 'no', label: w('license.no') },
+      { v: 'unknown', label: w('license.unknown') },
+    ],
+  },
+  {
+    // Rama clave: piso sin licencia (o sin saberlo) → ¿la comunidad lo permite?
+    id: 'community',
+    q: w('community.q'),
+    note: w('community.note'),
+    when: [
+      { field: 'license', in: ['no', 'unknown'] },
+      { field: 'type', in: ['flat'] },
+    ],
+    options: [
+      { v: 'yes', label: w('community.yes') },
+      { v: 'no', label: w('community.no') },
+      { v: 'unknown', label: w('community.unknown') },
+    ],
+  },
+  {
+    id: 'availability',
+    q: w('availability.q'),
+    options: [
+      { v: 'allYear', label: w('availability.allYear') },
+      { v: 'seasonal', label: w('availability.seasonal') },
+      { v: 'unknown', label: w('availability.unknown') },
+    ],
+  },
+];
+
+const config = {
+  locale,
+  steps,
+  contactQ: w('contact.q'),
+  stepOf: w('stepOf'),
+  back: w('back'),
+  fields: {
+    name: t('owners.formName'),
+    phone: t('owners.formPhone'),
+    email: t('owners.formEmail'),
+    message: t('owners.formMessage'),
+    send: t('owners.formSend'),
+  },
+  summaryLabels: {
+    type: w('summaryLabels.type'),
+    zone: w('summaryLabels.zone'),
+    operating: w('summaryLabels.operating'),
+    portals: w('summaryLabels.portals'),
+    license: w('summaryLabels.license'),
+    community: w('summaryLabels.community'),
+    availability: w('summaryLabels.availability'),
+  },
+  success: {
+    title: w('success.title'),
+    body: w('success.body'),
+    whatsapp: w('success.whatsapp'),
+  },
+  waIntro: w('waIntro'),
+  waNumber: site.contact.whatsapp,
+  mailto: `mailto:${site.contact.email}?subject=${encodeURIComponent('Gestión de vivienda - Rentalsur La Línea')}`,
+};
+---
+
+<div
+  class="rounded-3xl bg-sand-50 ring-1 ring-sea-950/5 p-6 sm:p-8 shadow-sm"
+  data-owners-wizard
+  data-config={JSON.stringify(config)}
+>
+  <!-- Progreso -->
+  <div data-w-progress-wrap>
+    <p class="text-xs font-semibold uppercase tracking-wide text-sea-950/45" data-w-step-label></p>
+    <div class="mt-2 h-1.5 rounded-full bg-sea-100 overflow-hidden">
+      <div class="h-full rounded-full bg-sunset-500 transition-all duration-300" style="width:0%" data-w-progress></div>
+    </div>
+  </div>
+
+  <!-- Pregunta -->
+  <div class="mt-6 min-h-[16rem]" data-w-body>
+    <h3 class="font-display font-semibold text-xl text-sea-950" data-w-question></h3>
+    <p class="mt-2 text-sm text-sea-950/60 hidden" data-w-note></p>
+    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3" data-w-options></div>
+
+    <!-- Paso de contacto -->
+    <div class="mt-5 space-y-4 hidden" data-w-contact>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <label class="block">
+          <span class="block text-sm font-medium text-sea-950/70 mb-1.5" data-f="name"></span>
+          <input name="nombre" type="text" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
+        </label>
+        <label class="block">
+          <span class="block text-sm font-medium text-sea-950/70 mb-1.5" data-f="phone"></span>
+          <input name="telefono" type="tel" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
+        </label>
+      </div>
+      <label class="block">
+        <span class="block text-sm font-medium text-sea-950/70 mb-1.5" data-f="email"></span>
+        <input name="email" type="email" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
+      </label>
+      <label class="block">
+        <span class="block text-sm font-medium text-sea-950/70 mb-1.5" data-f="message"></span>
+        <textarea name="mensaje" rows="3" class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"></textarea>
+      </label>
+      <button type="button" data-w-send class="w-full inline-flex justify-center items-center rounded-full bg-sunset-500 hover:bg-sunset-600 text-white font-semibold px-5 py-3 transition-colors">
+      </button>
+    </div>
+  </div>
+
+  <!-- Atrás -->
+  <button
+    type="button"
+    data-w-back
+    class="mt-4 hidden items-center gap-1.5 text-sm font-semibold text-sea-700 hover:text-sea-900"
+  >
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    <span data-w-back-label></span>
+  </button>
+
+  <!-- Éxito -->
+  <div class="hidden text-center py-8" data-w-success>
+    <span class="inline-grid place-items-center h-14 w-14 rounded-full bg-sea-100 text-sea-700 mb-4">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+    </span>
+    <h3 class="font-display font-semibold text-xl text-sea-950" data-w-success-title></h3>
+    <p class="mt-2 text-sea-950/65" data-w-success-body></p>
+    <a
+      data-w-whatsapp
+      href="#"
+      target="_blank"
+      rel="noopener"
+      class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold px-6 py-3 transition-colors"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.65.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.08a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.13-.14.3-.34.44-.5.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.56-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.97c.15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.56-.09 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Z"/></svg>
+    <span data-w-whatsapp-label></span>
+    </a>
+  </div>
+
+  <!-- Formulario estático oculto: permite a Netlify Forms detectar los campos en build -->
+  <form name="propietarios" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+    <input type="hidden" name="form-name" value="propietarios" />
+    <input name="bot-field" /><input name="tipo" /><input name="zona" /><input name="opera" />
+    <input name="portales" /><input name="licencia" /><input name="comunidad" />
+    <input name="disponibilidad" /><input name="nombre" /><input name="telefono" />
+    <input name="email" /><textarea name="mensaje"></textarea><input name="resumen" />
+  </form>
+</div>
+
+<script>
+  interface WStep {
+    id: string;
+    q: string;
+    note?: string;
+    when?: { field: string; in: string[] }[];
+    options: { v: string; label: string }[];
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-owners-wizard]').forEach((root) => {
+    const cfg = JSON.parse(root.dataset.config || '{}');
+    const steps: WStep[] = cfg.steps || [];
+    const answers: Record<string, string> = {};
+    const answerLabels: Record<string, string> = {};
+    let index = 0; // índice sobre la lista de pasos visibles
+
+    const $ = <T extends HTMLElement = HTMLElement>(sel: string) => root.querySelector<T>(sel)!;
+    const stepLabel = $('[data-w-step-label]');
+    const progress = $('[data-w-progress]');
+    const question = $('[data-w-question]');
+    const note = $('[data-w-note]');
+    const optionsBox = $('[data-w-options]');
+    const contactBox = $('[data-w-contact]');
+    const sendBtn = $('[data-w-send]');
+    const backBtn = $('[data-w-back]');
+    const body = $('[data-w-body]');
+    const successBox = $('[data-w-success]');
+
+    // Textos estáticos
+    $('[data-w-back-label]').textContent = cfg.back;
+    sendBtn.textContent = cfg.fields.send;
+    $('[data-w-success-title]').textContent = cfg.success.title;
+    $('[data-w-success-body]').textContent = cfg.success.body;
+    $('[data-w-whatsapp-label]').textContent = cfg.success.whatsapp;
+    root.querySelectorAll<HTMLElement>('[data-f]').forEach((el) => {
+      el.textContent = cfg.fields[el.dataset.f as string] || '';
+    });
+
+    const applies = (s: WStep) =>
+      !s.when || s.when.every((c) => c.in.includes(answers[c.field]));
+    // Pasos visibles según las respuestas actuales + paso final de contacto
+    const visibleSteps = (): (WStep | { id: 'contact'; q: string; options: [] })[] => [
+      ...steps.filter(applies),
+      { id: 'contact', q: cfg.contactQ, options: [] },
+    ];
+
+    function render() {
+      const list = visibleSteps();
+      if (index >= list.length) index = list.length - 1;
+      const step = list[index];
+      const isContact = step.id === 'contact';
+
+      stepLabel.textContent = cfg.stepOf
+        .replace('{n}', String(index + 1))
+        .replace('{total}', String(list.length));
+      progress.style.width = `${Math.round(((index + 1) / list.length) * 100)}%`;
+
+      question.textContent = step.q;
+      const n = (step as WStep).note;
+      note.textContent = n || '';
+      note.classList.toggle('hidden', !n);
+
+      optionsBox.innerHTML = '';
+      optionsBox.classList.toggle('hidden', isContact);
+      contactBox.classList.toggle('hidden', !isContact);
+      backBtn.classList.toggle('hidden', index === 0);
+      backBtn.classList.toggle('flex', index !== 0);
+
+      if (!isContact) {
+        (step as WStep).options.forEach((opt) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = opt.label;
+          const selected = answers[step.id] === opt.v;
+          b.className =
+            'rounded-xl px-4 py-3 text-left text-sm font-semibold ring-1 transition-colors ' +
+            (selected
+              ? 'bg-sea-900 text-white ring-sea-900'
+              : 'bg-white text-sea-950 ring-sea-200 hover:ring-sea-400 hover:bg-sea-50');
+          b.addEventListener('click', () => {
+            answers[step.id] = opt.v;
+            answerLabels[step.id] = opt.label;
+            // Si cambia una respuesta que condiciona ramas, limpiar respuestas huérfanas
+            steps.forEach((s) => {
+              if (!applies(s) && answers[s.id]) {
+                delete answers[s.id];
+                delete answerLabels[s.id];
+              }
+            });
+            index += 1;
+            render();
+          });
+          optionsBox.appendChild(b);
+        });
+      }
+    }
+
+    backBtn.addEventListener('click', () => {
+      if (index > 0) index -= 1;
+      render();
+    });
+
+    const summaryText = () => {
+      const order = ['type', 'zone', 'operating', 'portals', 'license', 'community', 'availability'];
+      return order
+        .filter((k) => answerLabels[k])
+        .map((k) => `${cfg.summaryLabels[k]}: ${answerLabels[k]}`)
+        .join(' · ');
+    };
+
+    sendBtn.addEventListener('click', async () => {
+      const nombre = contactBox.querySelector<HTMLInputElement>('[name=nombre]')!;
+      const telefono = contactBox.querySelector<HTMLInputElement>('[name=telefono]')!;
+      const email = contactBox.querySelector<HTMLInputElement>('[name=email]')!;
+      const mensaje = contactBox.querySelector<HTMLTextAreaElement>('[name=mensaje]')!;
+      for (const f of [nombre, telefono, email]) {
+        if (!f.reportValidity()) return;
+      }
+
+      const resumen = summaryText();
+      const params = new URLSearchParams({
+        'form-name': 'propietarios',
+        tipo: answerLabels.type || '',
+        zona: answerLabels.zone || '',
+        opera: answerLabels.operating || '',
+        portales: answerLabels.portals || '',
+        licencia: answerLabels.license || '',
+        comunidad: answerLabels.community || '',
+        disponibilidad: answerLabels.availability || '',
+        nombre: nombre.value,
+        telefono: telefono.value,
+        email: email.value,
+        mensaje: mensaje.value,
+        resumen,
+      });
+
+      const showSuccess = () => {
+        // Enlace WhatsApp con el resumen prellenado
+        const waText = `${cfg.waIntro}\n${resumen}\n${nombre.value} · ${telefono.value}`;
+        root
+          .querySelector<HTMLAnchorElement>('[data-w-whatsapp]')!
+          .setAttribute('href', `https://wa.me/${cfg.waNumber}?text=${encodeURIComponent(waText)}`);
+        body.classList.add('hidden');
+        backBtn.classList.add('hidden');
+        backBtn.classList.remove('flex');
+        $('[data-w-progress-wrap]').classList.add('hidden');
+        successBox.classList.remove('hidden');
+      };
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+        });
+        if (!res.ok) throw new Error('not-ok');
+        showSuccess();
+      } catch {
+        // Fallback (p. ej. Vercel, sin Netlify Forms): abrir el correo con el resumen
+        const bodyText = `${resumen}\n\n${cfg.fields.name}: ${nombre.value}\n${cfg.fields.phone}: ${telefono.value}\n${cfg.fields.email}: ${email.value}\n\n${mensaje.value}`;
+        window.location.href =
+          cfg.mailto + '&body=' + encodeURIComponent(bodyText);
+        showSuccess();
+      }
+    });
+
+    render();
+  });
+</script>
