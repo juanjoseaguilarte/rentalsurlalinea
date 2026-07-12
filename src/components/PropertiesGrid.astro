@@ -18,7 +18,12 @@ const viewAllUrl = buildBookingUrl({ locale });
       subtitle={t('apartments.subtitle')}
     />
 
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div
+      class:list={[
+        'mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6',
+        properties.length <= 2 ? 'max-w-4xl mx-auto' : 'lg:grid-cols-4',
+      ]}
+    >
       {properties.map((property) => <PropertyCard property={property} />)}
     </div>
 
@@ -32,7 +37,6 @@ const viewAllUrl = buildBookingUrl({ locale });
         {t('apartments.viewAll')}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <p class="text-xs text-sea-950/45 italic">{t('apartments.placeholderNote')}</p>
     </div>
   </div>
 </section>

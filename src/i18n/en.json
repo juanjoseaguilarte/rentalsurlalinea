@@ -44,8 +44,7 @@
     "bedrooms": "bed.",
     "book": "Book",
     "details": "View details",
-    "viewAll": "See all accommodations",
-    "placeholderNote": "Sample photos and names — will be replaced with your real properties."
+    "viewAll": "See all accommodations"
   },
   "services": {
     "eyebrow": "What we offer",

@@ -31,12 +31,9 @@ export interface Property {
 }
 
 /*
-  ⚠️ PLACEHOLDERS DE EJEMPLO
-  Sustituye estos por tus propiedades reales. Lo MÁS importante para el SEO:
-  - `name`: escríbelo IGUAL que aparece en Airbnb / Booking / vuestro motor Kross,
-    para que quien busque ese nombre en Google encuentre esta web y reserve directo.
-  - `krossRoomId`: el ID de la propiedad en el motor. La ficha en Kross tiene forma
-    https://rentallalinea.kross.travel/details/room/id/47/  →  aquí pondrías 47.
+  Propiedades reales importadas del motor Kross.
+  Para añadir una nueva: copia un bloque, y recuerda que para el SEO el `name`
+  debe escribirse IGUAL que aparece en Airbnb / Booking / el motor.
 */
 export const properties: Property[] = [
   {
@@ -111,50 +108,6 @@ export const properties: Property[] = [
     features: {
       es: ['60 m²', 'Hasta 5 personas', '2 dormitorios', 'Junto a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
       en: ['60 m²', 'Up to 5 guests', '2 bedrooms', 'Next to Gibraltar', 'Wi-Fi', 'Flexible 24h check-in'],
-    },
-  },
-  {
-    slug: 'casa-levante-familiar',
-    name: 'Casa Levante Familiar',
-    krossUrl: '',
-    image: '/images/apartment-3.svg',
-    guests: 6,
-    bedrooms: 3,
-    bathrooms: 2,
-    area: { es: 'Playa de Levante', en: 'Levante beach' },
-    short: {
-      es: 'Amplia casa para grupos junto a la playa de Levante.',
-      en: 'Spacious house for groups by Levante beach.',
-    },
-    description: {
-      es: 'Casa amplia y confortable a un paso de la playa de Levante, pensada para familias y grupos. Tres dormitorios, salón espacioso y patio andaluz. La base perfecta para explorar el Estrecho, Tarifa y la Costa del Sol.',
-      en: 'Spacious, comfortable house steps from Levante beach, designed for families and groups. Three bedrooms, a large living room and an Andalusian patio. The perfect base to explore the Strait, Tarifa and the Costa del Sol.',
-    },
-    features: {
-      es: ['Hasta 6 personas', 'Patio andaluz', 'Junto a la playa', 'Parking cercano', 'Cocina completa'],
-      en: ['Up to 6 guests', 'Andalusian patio', 'By the beach', 'Nearby parking', 'Full kitchen'],
-    },
-  },
-  {
-    slug: 'estudio-poniente-parejas',
-    name: 'Estudio Poniente',
-    krossUrl: '',
-    image: '/images/apartment-4.svg',
-    guests: 2,
-    bedrooms: 1,
-    bathrooms: 1,
-    area: { es: 'Playa de Poniente', en: 'Poniente beach' },
-    short: {
-      es: 'Acogedor estudio para parejas cerca de Poniente.',
-      en: 'Cosy studio for couples near Poniente.',
-    },
-    description: {
-      es: 'Estudio acogedor y coqueto, ideal para escapadas en pareja. Diseño moderno, todo lo necesario a mano y a pocos minutos de la playa de Poniente y del centro. Reserva directa con el mejor precio garantizado.',
-      en: 'Cosy, charming studio, perfect for a couples getaway. Modern design, everything you need at hand and minutes from Poniente beach and the town centre. Book direct with the best price guaranteed.',
-    },
-    features: {
-      es: ['Ideal parejas', 'Diseño moderno', 'Cerca del centro', 'Wi-Fi', 'Aire acondicionado'],
-      en: ['Ideal for couples', 'Modern design', 'Near the centre', 'Wi-Fi', 'Air conditioning'],
     },
   },
 ];

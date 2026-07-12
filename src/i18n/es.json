@@ -44,8 +44,7 @@
     "bedrooms": "dorm.",
     "book": "Reservar",
     "details": "Ver detalles",
-    "viewAll": "Ver todos los alojamientos",
-    "placeholderNote": "Fotos y nombres reales de ejemplo — se sustituirán por tus propiedades."
+    "viewAll": "Ver todos los alojamientos"
   },
   "services": {
     "eyebrow": "Lo que te ofrecemos",
