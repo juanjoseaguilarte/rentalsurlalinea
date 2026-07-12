@@ -1,20 +1,49 @@
 ---
-import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
-
 interface Props {
   title: string;
 }
 const { title } = Astro.props;
-const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
 ---
 
 <article class="pt-28 pb-20 min-h-[60vh]">
   <div class="container-page max-w-3xl">
     <h1 class="font-display font-semibold text-3xl sm:text-4xl text-sea-950">{title}</h1>
-    <p class="mt-6 text-sea-950/70 leading-relaxed">{t('legal.placeholder')}</p>
-    <div class="mt-8 rounded-xl bg-sand-50 ring-1 ring-sea-950/5 p-5 text-sm text-sea-950/60">
+    <div class="legal-prose mt-8">
       <slot />
     </div>
   </div>
 </article>
+
+<style is:global>
+  .legal-prose {
+    color: rgb(22 50 79 / 0.75);
+    line-height: 1.7;
+  }
+  .legal-prose h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-sea-950);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .legal-prose p {
+    margin-bottom: 1rem;
+  }
+  .legal-prose ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .legal-prose li {
+    margin-bottom: 0.4rem;
+  }
+  .legal-prose strong {
+    color: var(--color-sea-950);
+    font-weight: 600;
+  }
+  .legal-prose a {
+    color: var(--color-sea-700);
+    text-decoration: underline;
+  }
+</style>

@@ -6,6 +6,10 @@ import tailwindcss from '@tailwindcss/vite';
 // Cambia site al dominio propio cuando lo tengas (necesario para sitemap y hreflang correctos)
 export default defineConfig({
   site: 'https://rentalsurlalinea.vercel.app',
+  redirects: {
+    '/aviso-legal': '/terminos',
+    '/en/legal-notice': '/en/terms',
+  },
   i18n: {
     locales: ['es', 'en'],
     defaultLocale: 'es',

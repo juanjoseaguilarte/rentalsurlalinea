@@ -51,27 +51,57 @@
     "eyebrow": "Lo que te ofrecemos",
     "title": "Todo pensado para tu descanso",
     "items": {
-      "checkin": { "title": "Check-in flexible 24h", "desc": "Entra a cualquier hora del día o de la noche. Nos adaptamos a tu viaje, sin esperas." },
-      "support": { "title": "Atención cercana", "desc": "Estamos a un mensaje de WhatsApp durante toda tu estancia para lo que necesites." },
-      "clean": { "title": "Limpieza y confort", "desc": "Alojamientos impecables y equipados con todo lo necesario a tu llegada." },
-      "location": { "title": "Ubicación privilegiada", "desc": "A pocos minutos de las playas, del centro y de la frontera con Gibraltar." }
+      "checkin": {
+        "title": "Check-in flexible 24h",
+        "desc": "Entra a cualquier hora del día o de la noche. Nos adaptamos a tu viaje, sin esperas."
+      },
+      "support": {
+        "title": "Atención cercana",
+        "desc": "Estamos a un mensaje de WhatsApp durante toda tu estancia para lo que necesites."
+      },
+      "clean": {
+        "title": "Limpieza y confort",
+        "desc": "Alojamientos impecables y equipados con todo lo necesario a tu llegada."
+      },
+      "location": {
+        "title": "Ubicación privilegiada",
+        "desc": "A pocos minutos de las playas, del centro y de la frontera con Gibraltar."
+      }
     }
   },
   "destination": {
     "eyebrow": "Descubre La Línea",
     "title": "Un destino con mar, frontera y sabor",
     "subtitle": "La Línea de la Concepción es la puerta de la Costa del Sol gaditana: playas de bandera azul, la cercanía única de Gibraltar y la mejor gastronomía del Estrecho.",
-    "beaches": { "title": "Playas para todos", "desc": "La Atunara, Levante, Poniente y Sobrevela: arena dorada, aguas tranquilas y kilómetros de paseo marítimo." },
-    "gibraltar": { "title": "Gibraltar a un paso", "desc": "Cruza la frontera a pie y descubre el Peñón, sus monos, sus túneles y sus vistas al Estrecho." },
-    "food": { "title": "Gastronomía y cultura", "desc": "Pescaíto frito, tapas con solera y el ambiente andaluz más auténtico en cada esquina." }
+    "beaches": {
+      "title": "Playas para todos",
+      "desc": "La Atunara, Levante, Poniente y Sobrevela: arena dorada, aguas tranquilas y kilómetros de paseo marítimo."
+    },
+    "gibraltar": {
+      "title": "Gibraltar a un paso",
+      "desc": "Cruza la frontera a pie y descubre el Peñón, sus monos, sus túneles y sus vistas al Estrecho."
+    },
+    "food": {
+      "title": "Gastronomía y cultura",
+      "desc": "Pescaíto frito, tapas con solera y el ambiente andaluz más auténtico en cada esquina."
+    }
   },
   "why": {
     "eyebrow": "Por qué reservar con nosotros",
     "title": "Reserva directa, mejor experiencia",
     "points": {
-      "price": { "title": "El mejor precio", "desc": "Reservando en nuestra web evitas comisiones de plataformas externas." },
-      "trust": { "title": "Trato directo y de confianza", "desc": "Hablas siempre con nosotros, los anfitriones. Sin intermediarios." },
-      "flex": { "title": "Flexibilidad", "desc": "Consúltanos por estancias largas, grupos o necesidades especiales." }
+      "price": {
+        "title": "El mejor precio",
+        "desc": "Reservando en nuestra web evitas comisiones de plataformas externas."
+      },
+      "trust": {
+        "title": "Trato directo y de confianza",
+        "desc": "Hablas siempre con nosotros, los anfitriones. Sin intermediarios."
+      },
+      "flex": {
+        "title": "Flexibilidad",
+        "desc": "Consúltanos por estancias largas, grupos o necesidades especiales."
+      }
     }
   },
   "owners": {
@@ -181,14 +211,9 @@
     "contact": "Contacto",
     "legal": "Legal",
     "privacy": "Política de privacidad",
-    "terms": "Aviso legal",
+    "terms": "Términos y condiciones",
     "rights": "Todos los derechos reservados.",
     "madeIn": "Hecho con cariño en La Línea"
-  },
-  "legal": {
-    "noticeTitle": "Aviso legal",
-    "privacyTitle": "Política de privacidad",
-    "placeholder": "Este es un texto de ejemplo. Sustitúyelo por tu texto legal real antes de publicar (datos del titular, condiciones de uso, tratamiento de datos, cookies, etc.)."
   },
   "apartmentPage": {
     "backToAll": "Volver a apartamentos",

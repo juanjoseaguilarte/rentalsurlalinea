@@ -31,7 +31,8 @@ export const site = {
     phone: '+34623182453',
     phoneDisplay: '+34 623 18 24 53',
     whatsapp: '34623182453', // sin +
-    address: 'La Línea de la Concepción, Cádiz, España',
+    address: 'Calle Moreno de Mora, 40 · 11300 La Línea de la Concepción (Cádiz)',
+    cif: 'B19463165',
   },
 
   social: {
