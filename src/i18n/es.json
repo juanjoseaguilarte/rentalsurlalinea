@@ -222,5 +222,13 @@
     "capacity": "Capacidad",
     "location": "Ubicación",
     "aboutTitle": "Sobre este alojamiento"
+  },
+  "guide": {
+    "back": "Volver a inicio",
+    "ctaBook": "Reservar ahora",
+    "ctaApartments": "Ver apartamentos",
+    "credits": "Fotos: Wikimedia Commons (ver licencia en cada enlace)",
+    "photo": "Ver foto original",
+    "more": "Descubre más"
   }
 }

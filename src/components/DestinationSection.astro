@@ -1,15 +1,23 @@
 ---
-import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import { getLocaleFromUrl, useTranslations, localizedPath } from '../i18n/ui';
+import { guides } from '../data/guides';
 import SectionHeading from './SectionHeading.astro';
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 
-const cards = [
-  { key: 'beaches', image: '/images/beach.svg' },
-  { key: 'gibraltar', image: '/images/gibraltar.svg' },
-  { key: 'food', image: '/images/food.svg' },
-];
+const cardMeta: Record<string, { key: string; image: string }> = {
+  beaches: { key: 'beaches', image: '/images/beach.svg' },
+  gibraltar: { key: 'gibraltar', image: '/images/gibraltar.svg' },
+  food: { key: 'food', image: '/images/food.svg' },
+};
+
+const cards = guides.map((g) => ({
+  key: g.key,
+  image: g.hero.image,
+  fallback: cardMeta[g.key].image,
+  href: localizedPath(`/la-linea/${g.slug}`, locale),
+}));
 ---
 
 <section id="destino" class="py-20 sm:py-24 bg-sand-50 scroll-mt-24">
@@ -23,19 +31,27 @@ const cards = [
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
       {
         cards.map((card) => (
-          <article class="reveal group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 min-h-[22rem] flex">
+          <a
+            href={card.href}
+            class="reveal group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 min-h-[22rem] flex focus:outline-none focus:ring-2 focus:ring-sea-400"
+          >
             <img
               src={card.image}
               alt={t(`destination.${card.key}.title`)}
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              onerror={`this.onerror=null;this.src='${card.fallback}'`}
             />
             <div class="absolute inset-0 bg-gradient-to-t from-sea-950/85 via-sea-950/25 to-transparent" />
             <div class="relative mt-auto p-6 text-white">
               <h3 class="font-display font-semibold text-xl">{t(`destination.${card.key}.title`)}</h3>
               <p class="mt-2 text-sm text-white/85 leading-relaxed">{t(`destination.${card.key}.desc`)}</p>
+              <span class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset-300 group-hover:text-sunset-400 transition-colors">
+                {t('guide.more')}
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
             </div>
-          </article>
+          </a>
         ))
       }
     </div>

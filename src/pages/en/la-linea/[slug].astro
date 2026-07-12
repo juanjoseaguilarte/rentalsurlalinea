@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import GuidePage from '../../../components/GuidePage.astro';
+import { guides } from '../../../data/guides';
+
+export function getStaticPaths() {
+  return guides.map((guide) => ({ params: { slug: guide.slug }, props: { guide } }));
+}
+
+const { guide } = Astro.props;
+---
+
+<BaseLayout
+  title={`${guide.title.en} | Rentalsur La Línea`}
+  description={guide.metaDescription.en}
+  image={guide.hero.image}
+>
+  <GuidePage guide={guide} />
+</BaseLayout>
