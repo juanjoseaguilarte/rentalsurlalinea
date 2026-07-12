@@ -1,0 +1,29 @@
+---
+import { getLocaleFromUrl, alternatePath } from '../i18n/ui';
+
+const locale = getLocaleFromUrl(Astro.url);
+const esHref = alternatePath(Astro.url, 'es');
+const enHref = alternatePath(Astro.url, 'en');
+---
+
+<div class="flex items-center gap-1 text-sm font-semibold">
+  <a
+    href={esHref}
+    hreflang="es"
+    aria-current={locale === 'es' ? 'true' : undefined}
+    class:list={[
+      'px-2 py-1 rounded-md transition-colors',
+      locale === 'es' ? 'text-sea-700 bg-sea-50' : 'text-sea-950/60 hover:text-sea-700',
+    ]}>ES</a
+  >
+  <span class="text-sea-950/20" aria-hidden="true">/</span>
+  <a
+    href={enHref}
+    hreflang="en"
+    aria-current={locale === 'en' ? 'true' : undefined}
+    class:list={[
+      'px-2 py-1 rounded-md transition-colors',
+      locale === 'en' ? 'text-sea-700 bg-sea-50' : 'text-sea-950/60 hover:text-sea-700',
+    ]}>EN</a
+  >
+</div>

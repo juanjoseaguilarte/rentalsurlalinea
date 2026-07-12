@@ -1,0 +1,103 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import { site } from '../config/site';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const { baseUrl, searchPath, accommodationsPath, params } = site.booking;
+// Endpoint de búsqueda del motor (con prefijo de idioma) y fallback al listado.
+const langSeg = locale === 'en' ? 'en/' : '';
+const searchUrl = new URL(`${langSeg}${searchPath}`, baseUrl).toString();
+const fallbackUrl = new URL(`${langSeg}${accommodationsPath}`, baseUrl).toString();
+---
+
+<form
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto_auto] gap-3 items-end"
+  data-search-form
+  data-base-url={searchUrl}
+  data-fallback-url={fallbackUrl}
+  data-param-checkin={params.checkin}
+  data-param-checkout={params.checkout}
+  data-param-guests={params.guests}
+  data-param-lang={params.lang}
+  data-locale={locale}
+>
+  <label class="block">
+    <span class="block text-xs font-semibold uppercase tracking-wide text-sea-950/60 mb-1.5"
+      >{t('hero.checkin')}</span
+    >
+    <input
+      type="date"
+      name="checkin"
+      class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-3 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
+    />
+  </label>
+
+  <label class="block">
+    <span class="block text-xs font-semibold uppercase tracking-wide text-sea-950/60 mb-1.5"
+      >{t('hero.checkout')}</span
+    >
+    <input
+      type="date"
+      name="checkout"
+      class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-3 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
+    />
+  </label>
+
+  <label class="block">
+    <span class="block text-xs font-semibold uppercase tracking-wide text-sea-950/60 mb-1.5"
+      >{t('hero.guests')}</span
+    >
+    <select
+      name="guests"
+      class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-3 text-sea-950 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"
+    >
+      {
+        [1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+          <option value={n} selected={n === 2}>
+            {n} {n === 1 ? t('hero.guest_one') : t('hero.guest_other')}
+          </option>
+        ))
+      }
+    </select>
+  </label>
+
+  <button
+    type="submit"
+    class="h-[50px] inline-flex items-center justify-center gap-2 rounded-xl bg-sea-600 hover:bg-sea-700 text-white font-semibold px-5 transition-colors whitespace-nowrap"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    {t('hero.search')}
+  </button>
+</form>
+
+<script>
+  // Construye la URL del motor Kross y la abre en pestaña nueva.
+  // Fallback seguro: si algo falla, abre la URL base.
+  document.querySelectorAll('[data-search-form]').forEach((formEl) => {
+    const form = formEl as HTMLFormElement;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const base = form.dataset.baseUrl || '';
+      const fallback = form.dataset.fallbackUrl || base;
+      try {
+        const data = new FormData(form);
+        const checkin = data.get('checkin')?.toString();
+        const checkout = data.get('checkout')?.toString();
+        const guests = data.get('guests')?.toString();
+        // Sin fechas: abrir directamente el listado de alojamientos del motor.
+        if (!checkin && !checkout) {
+          window.open(fallback, '_blank', 'noopener');
+          return;
+        }
+        const url = new URL(base);
+        if (checkin && form.dataset.paramCheckin) url.searchParams.set(form.dataset.paramCheckin, checkin);
+        if (checkout && form.dataset.paramCheckout) url.searchParams.set(form.dataset.paramCheckout, checkout);
+        if (guests && form.dataset.paramGuests) url.searchParams.set(form.dataset.paramGuests, guests);
+        window.open(url.toString(), '_blank', 'noopener');
+      } catch {
+        window.open(fallback, '_blank', 'noopener');
+      }
+    });
+  });
+</script>

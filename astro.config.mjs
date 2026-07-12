@@ -1,0 +1,27 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
+
+// Cambia site a tu dominio real cuando lo tengas (necesario para sitemap y hreflang correctos)
+export default defineConfig({
+  site: 'https://rentalsurlalinea.com',
+  i18n: {
+    locales: ['es', 'en'],
+    defaultLocale: 'es',
+    routing: {
+      prefixDefaultLocale: false, // ES en la raíz "/", EN en "/en/"
+    },
+  },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: { es: 'es-ES', en: 'en-GB' },
+      },
+    }),
+  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});

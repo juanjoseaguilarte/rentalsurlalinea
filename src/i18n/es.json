@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Rentalsur La Línea | Alquiler vacacional en La Línea de la Concepción, Cádiz",
+    "description": "Apartamentos y alojamientos de alquiler vacacional en La Línea de la Concepción (Cádiz), junto a Gibraltar y sus playas. Reserva directa sin comisiones, check-in flexible 24h.",
+    "ogAlt": "Vista de la bahía de La Línea de la Concepción"
+  },
+  "nav": {
+    "home": "Inicio",
+    "apartments": "Apartamentos",
+    "services": "Servicios",
+    "destination": "La Línea",
+    "owners": "Propietarios",
+    "contact": "Contacto",
+    "book": "Reservar"
+  },
+  "hero": {
+    "eyebrow": "Alquiler vacacional en La Línea de la Concepción",
+    "title": "Tu casa junto al mar, a un paso de Gibraltar",
+    "subtitle": "Apartamentos con encanto en el corazón de la Costa del Sol gaditana. Reserva directa, sin comisiones y con trato cercano.",
+    "searchTitle": "Consulta disponibilidad",
+    "checkin": "Entrada",
+    "checkout": "Salida",
+    "guests": "Huéspedes",
+    "guest_one": "huésped",
+    "guest_other": "huéspedes",
+    "search": "Buscar disponibilidad",
+    "scroll": "Descubre más"
+  },
+  "trust": {
+    "direct": "Reserva directa",
+    "directDesc": "Sin comisiones de intermediarios",
+    "checkin": "Check-in flexible 24h",
+    "checkinDesc": "Llega a la hora que necesites",
+    "local": "Anfitriones locales",
+    "localDesc": "Atención cercana y personal",
+    "location": "Ubicación inmejorable",
+    "locationDesc": "Playas y Gibraltar a un paso"
+  },
+  "apartments": {
+    "eyebrow": "Nuestros alojamientos",
+    "title": "Apartamentos seleccionados",
+    "subtitle": "Espacios cuidados y bien ubicados para que disfrutes de La Línea como en casa.",
+    "guests": "huéspedes",
+    "bedrooms": "dorm.",
+    "book": "Reservar",
+    "details": "Ver detalles",
+    "viewAll": "Ver todos los alojamientos",
+    "placeholderNote": "Fotos y nombres reales de ejemplo — se sustituirán por tus propiedades."
+  },
+  "services": {
+    "eyebrow": "Lo que te ofrecemos",
+    "title": "Todo pensado para tu descanso",
+    "items": {
+      "checkin": { "title": "Check-in flexible 24h", "desc": "Entra a cualquier hora del día o de la noche. Nos adaptamos a tu viaje, sin esperas." },
+      "support": { "title": "Atención cercana", "desc": "Estamos a un mensaje de WhatsApp durante toda tu estancia para lo que necesites." },
+      "clean": { "title": "Limpieza y confort", "desc": "Alojamientos impecables y equipados con todo lo necesario a tu llegada." },
+      "location": { "title": "Ubicación privilegiada", "desc": "A pocos minutos de las playas, del centro y de la frontera con Gibraltar." }
+    }
+  },
+  "destination": {
+    "eyebrow": "Descubre La Línea",
+    "title": "Un destino con mar, frontera y sabor",
+    "subtitle": "La Línea de la Concepción es la puerta de la Costa del Sol gaditana: playas de bandera azul, la cercanía única de Gibraltar y la mejor gastronomía del Estrecho.",
+    "beaches": { "title": "Playas para todos", "desc": "La Atunara, Levante, Poniente y Sobrevela: arena dorada, aguas tranquilas y kilómetros de paseo marítimo." },
+    "gibraltar": { "title": "Gibraltar a un paso", "desc": "Cruza la frontera a pie y descubre el Peñón, sus monos, sus túneles y sus vistas al Estrecho." },
+    "food": { "title": "Gastronomía y cultura", "desc": "Pescaíto frito, tapas con solera y el ambiente andaluz más auténtico en cada esquina." }
+  },
+  "why": {
+    "eyebrow": "Por qué reservar con nosotros",
+    "title": "Reserva directa, mejor experiencia",
+    "points": {
+      "price": { "title": "El mejor precio", "desc": "Reservando en nuestra web evitas comisiones de plataformas externas." },
+      "trust": { "title": "Trato directo y de confianza", "desc": "Hablas siempre con nosotros, los anfitriones. Sin intermediarios." },
+      "flex": { "title": "Flexibilidad", "desc": "Consúltanos por estancias largas, grupos o necesidades especiales." }
+    }
+  },
+  "owners": {
+    "eyebrow": "¿Tienes una vivienda en La Línea?",
+    "title": "Gestionamos tu alquiler vacacional",
+    "subtitle": "Rentabiliza tu propiedad sin preocupaciones. Nosotros nos encargamos de todo: publicación, reservas, check-in, limpieza y atención al huésped.",
+    "benefits": {
+      "income": "Maximiza tus ingresos con precios optimizados",
+      "hassle": "Cero preocupaciones: gestión integral",
+      "channels": "Presencia en los principales portales y reserva directa",
+      "care": "Cuidamos tu vivienda como si fuera nuestra"
+    },
+    "cta": "Quiero información",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formPhone": "Teléfono",
+    "formMessage": "Cuéntanos sobre tu vivienda",
+    "formSend": "Enviar",
+    "formSuccess": "¡Gracias! Te contactaremos muy pronto."
+  },
+  "contact": {
+    "eyebrow": "Hablemos",
+    "title": "Contacta con nosotros",
+    "subtitle": "¿Dudas sobre tu reserva o tu próxima escapada? Estamos encantados de ayudarte.",
+    "email": "Email",
+    "phone": "Teléfono",
+    "whatsapp": "WhatsApp",
+    "whatsappCta": "Escríbenos por WhatsApp",
+    "follow": "Síguenos",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formMessage": "Mensaje",
+    "formSend": "Enviar mensaje",
+    "formSuccess": "¡Gracias! Te responderemos lo antes posible."
+  },
+  "footer": {
+    "tagline": "Alquiler vacacional en La Línea de la Concepción, Cádiz.",
+    "explore": "Explora",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "privacy": "Política de privacidad",
+    "terms": "Aviso legal",
+    "rights": "Todos los derechos reservados.",
+    "madeIn": "Hecho con cariño en La Línea"
+  },
+  "legal": {
+    "noticeTitle": "Aviso legal",
+    "privacyTitle": "Política de privacidad",
+    "placeholder": "Este es un texto de ejemplo. Sustitúyelo por tu texto legal real antes de publicar (datos del titular, condiciones de uso, tratamiento de datos, cookies, etc.)."
+  },
+  "apartmentPage": {
+    "backToAll": "Volver a apartamentos",
+    "features": "Características",
+    "bookNow": "Reservar ahora",
+    "askWhatsapp": "Preguntar por WhatsApp",
+    "capacity": "Capacidad",
+    "location": "Ubicación",
+    "aboutTitle": "Sobre este alojamiento"
+  }
+}

@@ -1,0 +1,40 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const items = [
+  { key: 'direct', icon: 'tag' },
+  { key: 'checkin', icon: 'clock' },
+  { key: 'local', icon: 'heart' },
+  { key: 'location', icon: 'pin' },
+];
+
+const icons: Record<string, string> = {
+  tag: '<path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1.5" fill="currentColor" stroke="none"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  heart: '<path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21l8.8-8.3a5 5 0 0 0 0-7.1Z"/>',
+  pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+};
+---
+
+<section class="bg-sea-950 text-white">
+  <div class="container-page py-6">
+    <ul class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5">
+      {
+        items.map((it) => (
+          <li class="flex items-start gap-3">
+            <span class="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-white/10 text-sunset-400">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={icons[it.icon]} />
+            </span>
+            <div>
+              <p class="font-semibold leading-tight">{t(`trust.${it.key}`)}</p>
+              <p class="text-sm text-white/60 leading-snug">{t(`trust.${it.key}Desc`)}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

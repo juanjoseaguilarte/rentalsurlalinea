@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Estudio">
+  <defs><linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4ecde"/><stop offset="1" stop-color="#cba471"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#bg4)"/>
+  <circle cx="640" cy="140" r="55" fill="#fff3d6" opacity="0.9"/>
+  <rect y="450" width="800" height="150" fill="#3d9cc4" opacity="0.4"/>
+  <rect x="250" y="250" width="300" height="230" rx="10" fill="#fbf8f2"/>
+  <g fill="#154961" opacity="0.85">
+    <rect x="285" y="285" width="230" height="110" rx="4"/>
+    <rect x="285" y="410" width="100" height="60" rx="4" fill="#e8843a"/>
+  </g>
+  <path d="M250 250 h300" stroke="#e8843a" stroke-width="10"/>
+</svg>

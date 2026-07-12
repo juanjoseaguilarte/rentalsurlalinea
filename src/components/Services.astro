@@ -1,0 +1,50 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import SectionHeading from './SectionHeading.astro';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const items = [
+  { key: 'checkin', icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', featured: true },
+  { key: 'support', icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/>', featured: false },
+  { key: 'clean', icon: '<path d="m19.7 5.3-1-1a1 1 0 0 0-1.4 0L9 12.6V15h2.4l8.3-8.3a1 1 0 0 0 0-1.4Z"/><path d="M14 7 4 17v3h3L17 10"/>', featured: false },
+  { key: 'location', icon: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>', featured: false },
+];
+---
+
+<section id="servicios" class="py-20 sm:py-24 scroll-mt-24">
+  <div class="container-page">
+    <SectionHeading eyebrow={t('services.eyebrow')} title={t('services.title')} />
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        items.map((it) => (
+          <div
+            class:list={[
+              'reveal rounded-2xl p-6 ring-1 transition-all duration-300 hover:-translate-y-1',
+              it.featured
+                ? 'bg-sea-600 text-white ring-sea-600 shadow-lg'
+                : 'bg-white text-sea-950 ring-sea-950/5 shadow-sm hover:shadow-lg',
+            ]}
+          >
+            <span
+              class:list={[
+                'grid place-items-center h-12 w-12 rounded-xl mb-4',
+                it.featured ? 'bg-white/15 text-sunset-300' : 'bg-sea-50 text-sea-600',
+              ]}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={it.icon} />
+            </span>
+            <h3 class:list={['font-display font-semibold text-lg', it.featured ? 'text-white' : 'text-sea-950']}>
+              {t(`services.items.${it.key}.title`)}
+            </h3>
+            <p class:list={['mt-2 text-sm leading-relaxed', it.featured ? 'text-white/85' : 'text-sea-950/65']}>
+              {t(`services.items.${it.key}.desc`)}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="700" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Playa">
+  <defs>
+    <linearGradient id="bsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9d7e9"/><stop offset="1" stop-color="#eef7fb"/></linearGradient>
+    <linearGradient id="bsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f7fab"/><stop offset="1" stop-color="#3d9cc4"/></linearGradient>
+  </defs>
+  <rect width="800" height="700" fill="url(#bsky)"/>
+  <circle cx="620" cy="150" r="70" fill="#fff3d6"/>
+  <rect y="320" width="800" height="200" fill="url(#bsea)"/>
+  <g fill="#ffffff" opacity="0.25"><path d="M0 360 q100 -18 200 0 t200 0 t200 0 t200 0 v30 H0 Z"/></g>
+  <path d="M0 500 q400 -60 800 0 v200 H0 Z" fill="#e8d7bd"/>
+  <path d="M0 520 q400 -50 800 0" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.5"/>
+  <!-- sombrilla -->
+  <g transform="translate(560 470)"><rect x="-4" y="0" width="8" height="120" fill="#154961"/><path d="M-70 0 A70 70 0 0 1 70 0 Z" fill="#e8843a"/></g>
+</svg>

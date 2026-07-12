@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Redirección amable para /en sin barra final
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301

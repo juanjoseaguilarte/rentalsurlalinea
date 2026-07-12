@@ -1,0 +1,108 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import { site, whatsappLink } from '../config/site';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const mailto = `mailto:${site.contact.email}`;
+const wa = whatsappLink(locale === 'es' ? '¡Hola! Me gustaría más información.' : 'Hi! I would like more information.');
+---
+
+<section id="contacto" class="py-20 sm:py-24 bg-sand-50 scroll-mt-24">
+  <div class="container-page">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+      <!-- Info de contacto -->
+      <div class="reveal">
+        <p class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-sunset-600">
+          <span class="h-px w-6 bg-current opacity-50"></span>
+          {t('contact.eyebrow')}
+        </p>
+        <h2 class="mt-3 font-display font-semibold text-3xl sm:text-4xl leading-tight text-sea-950">
+          {t('contact.title')}
+        </h2>
+        <p class="mt-4 text-lg text-sea-950/65 leading-relaxed max-w-md">{t('contact.subtitle')}</p>
+
+        <div class="mt-8 space-y-4">
+          <a href={mailto} class="flex items-center gap-4 group">
+            <span class="grid place-items-center h-11 w-11 rounded-xl bg-sea-100 text-sea-700 group-hover:bg-sea-600 group-hover:text-white transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 7-10 6L2 7"/></svg>
+            </span>
+            <span>
+              <span class="block text-xs font-semibold uppercase tracking-wide text-sea-950/45">{t('contact.email')}</span>
+              <span class="block font-medium text-sea-950">{site.contact.email}</span>
+            </span>
+          </a>
+
+          <a href={`tel:${site.contact.phone}`} class="flex items-center gap-4 group">
+            <span class="grid place-items-center h-11 w-11 rounded-xl bg-sea-100 text-sea-700 group-hover:bg-sea-600 group-hover:text-white transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+            </span>
+            <span>
+              <span class="block text-xs font-semibold uppercase tracking-wide text-sea-950/45">{t('contact.phone')}</span>
+              <span class="block font-medium text-sea-950">{site.contact.phoneDisplay}</span>
+            </span>
+          </a>
+
+          <a href={wa} target="_blank" rel="noopener" class="flex items-center gap-4 group">
+            <span class="grid place-items-center h-11 w-11 rounded-xl bg-[#25D366]/15 text-[#128C7E] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.65.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.08a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.13-.14.3-.34.44-.5.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.56-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.97c.15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.56-.09 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Z"/></svg>
+            </span>
+            <span>
+              <span class="block text-xs font-semibold uppercase tracking-wide text-sea-950/45">{t('contact.whatsapp')}</span>
+              <span class="block font-medium text-sea-950">{t('contact.whatsappCta')}</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Redes -->
+        <div class="mt-8">
+          <p class="text-xs font-semibold uppercase tracking-wide text-sea-950/45 mb-3">{t('contact.follow')}</p>
+          <div class="flex gap-3">
+            <a href={site.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" class="grid place-items-center h-10 w-10 rounded-full bg-white ring-1 ring-sea-950/10 text-sea-700 hover:bg-sea-600 hover:text-white transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" class="grid place-items-center h-10 w-10 rounded-full bg-white ring-1 ring-sea-950/10 text-sea-700 hover:bg-sea-600 hover:text-white transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <div class="reveal rounded-3xl bg-white ring-1 ring-sea-950/5 p-6 sm:p-8 shadow-sm">
+        <form
+          name="contacto"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action={mailto}
+          data-ajax-form
+          data-mailto={mailto}
+          data-success={t('contact.formSuccess')}
+          class="space-y-4"
+        >
+          <input type="hidden" name="form-name" value="contacto" />
+          <p class="hidden"><label>No rellenar: <input name="bot-field" /></label></p>
+
+          <label class="block">
+            <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('contact.formName')}</span>
+            <input name="nombre" type="text" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
+          </label>
+          <label class="block">
+            <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('contact.formEmail')}</span>
+            <input name="email" type="email" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400" />
+          </label>
+          <label class="block">
+            <span class="block text-sm font-medium text-sea-950/70 mb-1.5">{t('contact.formMessage')}</span>
+            <textarea name="mensaje" rows="5" required class="w-full rounded-xl border border-sea-200 bg-white px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-sea-400 focus:border-sea-400"></textarea>
+          </label>
+
+          <button type="submit" class="w-full inline-flex justify-center items-center rounded-full bg-sunset-500 hover:bg-sunset-600 text-white font-semibold px-5 py-3 transition-colors">
+            {t('contact.formSend')}
+          </button>
+          <p class="text-sm font-medium text-sea-700 hidden" data-success-msg></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

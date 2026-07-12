@@ -1,0 +1,52 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import SearchBar from './SearchBar.astro';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<section class="relative min-h-[92vh] flex items-center overflow-hidden">
+  <!-- Fondo -->
+  <div class="absolute inset-0 -z-10">
+    <img
+      src="/images/hero.svg"
+      alt={t('meta.ogAlt')}
+      class="h-full w-full object-cover"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-sea-950/55 via-sea-950/35 to-sea-950/70"></div>
+  </div>
+
+  <div class="container-page w-full pt-28 pb-14">
+    <div class="max-w-2xl text-white">
+      <p
+        class="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-sm font-medium ring-1 ring-white/25"
+      >
+        <span class="h-2 w-2 rounded-full bg-sunset-400"></span>
+        {t('hero.eyebrow')}
+      </p>
+      <h1 class="mt-5 font-display font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+        {t('hero.title')}
+      </h1>
+      <p class="mt-5 text-lg sm:text-xl text-white/90 max-w-xl leading-relaxed">
+        {t('hero.subtitle')}
+      </p>
+    </div>
+
+    <!-- Buscador -->
+    <div class="mt-9 max-w-4xl rounded-2xl bg-white/95 backdrop-blur shadow-2xl ring-1 ring-sea-950/5 p-5 sm:p-6">
+      <p class="text-sm font-semibold text-sea-950 mb-4">{t('hero.searchTitle')}</p>
+      <SearchBar />
+    </div>
+  </div>
+
+  <a
+    href="#apartamentos"
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white flex flex-col items-center gap-1 text-xs font-medium"
+    aria-label={t('hero.scroll')}
+  >
+    <span>{t('hero.scroll')}</span>
+    <svg class="animate-bounce" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </a>
+</section>

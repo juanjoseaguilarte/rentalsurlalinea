@@ -1,0 +1,77 @@
+---
+import { getLocaleFromUrl, useTranslations, localizedPath } from '../i18n/ui';
+import { site, whatsappLink } from '../config/site';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const home = localizedPath('/', locale);
+const year = 2026;
+
+const explore = [
+  { href: `${home}#apartamentos`, label: t('nav.apartments') },
+  { href: `${home}#servicios`, label: t('nav.services') },
+  { href: `${home}#destino`, label: t('nav.destination') },
+  { href: `${home}#propietarios`, label: t('nav.owners') },
+];
+const legalLinks = [
+  { href: localizedPath(locale === 'es' ? '/aviso-legal' : '/legal-notice', locale), label: t('footer.terms') },
+  { href: localizedPath(locale === 'es' ? '/privacidad' : '/privacy', locale), label: t('footer.privacy') },
+];
+---
+
+<footer class="bg-sea-950 text-white">
+  <div class="container-page py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Marca -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-2">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-sea-600 text-white font-display font-semibold text-lg">R</span>
+          <span class="font-display font-semibold text-lg">Rentalsur <span class="text-sunset-400">La Línea</span></span>
+        </div>
+        <p class="mt-4 text-sm text-white/60 leading-relaxed max-w-xs">{t('footer.tagline')}</p>
+        <div class="mt-5 flex gap-3">
+          <a href={site.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" class="grid place-items-center h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href={site.social.facebook} target="_blank" rel="noopener" aria-label="Facebook" class="grid place-items-center h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9Z"/></svg>
+          </a>
+          <a href={whatsappLink()} target="_blank" rel="noopener" aria-label="WhatsApp" class="grid place-items-center h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.26-.1-.45-.15-.65.15s-.74.94-.9 1.13c-.17.2-.34.22-.63.08a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.66-2.06c-.17-.3 0-.46.13-.6.13-.14.3-.34.44-.5.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.56-.47-.48-.64-.49h-.55c-.2 0-.5.07-.77.37-.26.3-1 .98-1 2.4s1.03 2.78 1.17 2.97c.15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.8.12.56-.09 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34ZM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explora -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-white/50">{t('footer.explore')}</h3>
+        <ul class="mt-4 space-y-2.5">
+          {explore.map((l) => <li><a href={l.href} class="text-sm text-white/70 hover:text-white transition-colors">{l.label}</a></li>)}
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-white/50">{t('footer.contact')}</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-white/70">
+          <li><a href={`mailto:${site.contact.email}`} class="hover:text-white transition-colors">{site.contact.email}</a></li>
+          <li><a href={`tel:${site.contact.phone}`} class="hover:text-white transition-colors">{site.contact.phoneDisplay}</a></li>
+          <li>{site.contact.address}</li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-white/50">{t('footer.legal')}</h3>
+        <ul class="mt-4 space-y-2.5">
+          {legalLinks.map((l) => <li><a href={l.href} class="text-sm text-white/70 hover:text-white transition-colors">{l.label}</a></li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/50">
+      <p>© {year} {site.name}. {t('footer.rights')}</p>
+      <p>{t('footer.madeIn')} 🌊</p>
+    </div>
+  </div>
+</footer>

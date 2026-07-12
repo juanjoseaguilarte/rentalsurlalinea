@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ApartmentDetail from '../../components/ApartmentDetail.astro';
+import { properties } from '../../data/properties';
+
+export function getStaticPaths() {
+  return properties.map((property) => ({
+    params: { slug: property.slug },
+    props: { property },
+  }));
+}
+
+const { property } = Astro.props;
+const title = `${property.name} | Rentalsur La Línea`;
+const description = property.short.es;
+---
+
+<BaseLayout title={title} description={description} image={property.image}>
+  <ApartmentDetail property={property} />
+</BaseLayout>

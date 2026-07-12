@@ -1,0 +1,43 @@
+---
+import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import SectionHeading from './SectionHeading.astro';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const cards = [
+  { key: 'beaches', image: '/images/beach.svg' },
+  { key: 'gibraltar', image: '/images/gibraltar.svg' },
+  { key: 'food', image: '/images/food.svg' },
+];
+---
+
+<section id="destino" class="py-20 sm:py-24 bg-sand-50 scroll-mt-24">
+  <div class="container-page">
+    <SectionHeading
+      eyebrow={t('destination.eyebrow')}
+      title={t('destination.title')}
+      subtitle={t('destination.subtitle')}
+    />
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        cards.map((card) => (
+          <article class="reveal group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 min-h-[22rem] flex">
+            <img
+              src={card.image}
+              alt={t(`destination.${card.key}.title`)}
+              loading="lazy"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-sea-950/85 via-sea-950/25 to-transparent" />
+            <div class="relative mt-auto p-6 text-white">
+              <h3 class="font-display font-semibold text-xl">{t(`destination.${card.key}.title`)}</h3>
+              <p class="mt-2 text-sm text-white/85 leading-relaxed">{t(`destination.${card.key}.desc`)}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

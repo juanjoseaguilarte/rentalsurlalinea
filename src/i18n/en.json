@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Rentalsur La Línea | Holiday rentals in La Línea de la Concepción, Cádiz",
+    "description": "Holiday apartments and rentals in La Línea de la Concepción (Cádiz), next to Gibraltar and its beaches. Book direct with no fees, flexible 24h check-in.",
+    "ogAlt": "View of the bay of La Línea de la Concepción"
+  },
+  "nav": {
+    "home": "Home",
+    "apartments": "Apartments",
+    "services": "Services",
+    "destination": "La Línea",
+    "owners": "Owners",
+    "contact": "Contact",
+    "book": "Book now"
+  },
+  "hero": {
+    "eyebrow": "Holiday rentals in La Línea de la Concepción",
+    "title": "Your home by the sea, steps from Gibraltar",
+    "subtitle": "Charming apartments in the heart of Cádiz's Costa del Sol. Book direct, no fees, with a personal touch.",
+    "searchTitle": "Check availability",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "guests": "Guests",
+    "guest_one": "guest",
+    "guest_other": "guests",
+    "search": "Search availability",
+    "scroll": "Discover more"
+  },
+  "trust": {
+    "direct": "Direct booking",
+    "directDesc": "No middleman fees",
+    "checkin": "Flexible 24h check-in",
+    "checkinDesc": "Arrive whenever you need",
+    "local": "Local hosts",
+    "localDesc": "Personal, close attention",
+    "location": "Unbeatable location",
+    "locationDesc": "Beaches & Gibraltar nearby"
+  },
+  "apartments": {
+    "eyebrow": "Our accommodations",
+    "title": "Selected apartments",
+    "subtitle": "Carefully kept, well-located spaces to enjoy La Línea like a local.",
+    "guests": "guests",
+    "bedrooms": "bed.",
+    "book": "Book",
+    "details": "View details",
+    "viewAll": "See all accommodations",
+    "placeholderNote": "Sample photos and names — will be replaced with your real properties."
+  },
+  "services": {
+    "eyebrow": "What we offer",
+    "title": "Everything for a great stay",
+    "items": {
+      "checkin": { "title": "Flexible 24h check-in", "desc": "Arrive at any time, day or night. We adapt to your trip, no waiting." },
+      "support": { "title": "Close support", "desc": "We're one WhatsApp message away throughout your whole stay." },
+      "clean": { "title": "Cleanliness & comfort", "desc": "Spotless homes, fully equipped and ready when you arrive." },
+      "location": { "title": "Prime location", "desc": "Minutes from the beaches, the town centre and the Gibraltar border." }
+    }
+  },
+  "destination": {
+    "eyebrow": "Discover La Línea",
+    "title": "A destination with sea, border and flavour",
+    "subtitle": "La Línea de la Concepción is the gateway to Cádiz's Costa del Sol: blue-flag beaches, the unique closeness of Gibraltar and the best food of the Strait.",
+    "beaches": { "title": "Beaches for everyone", "desc": "La Atunara, Levante, Poniente and Sobrevela: golden sand, calm waters and miles of seafront promenade." },
+    "gibraltar": { "title": "Gibraltar next door", "desc": "Cross the border on foot and discover the Rock, its monkeys, tunnels and views over the Strait." },
+    "food": { "title": "Food & culture", "desc": "Fried fish, classic tapas and the most authentic Andalusian atmosphere on every corner." }
+  },
+  "why": {
+    "eyebrow": "Why book with us",
+    "title": "Book direct, better experience",
+    "points": {
+      "price": { "title": "Best price", "desc": "Booking on our site avoids external platform fees." },
+      "trust": { "title": "Direct, trustworthy service", "desc": "You always talk to us, the hosts. No intermediaries." },
+      "flex": { "title": "Flexibility", "desc": "Ask us about long stays, groups or special needs." }
+    }
+  },
+  "owners": {
+    "eyebrow": "Own a property in La Línea?",
+    "title": "We manage your holiday rental",
+    "subtitle": "Make your property profitable without the hassle. We handle it all: listing, bookings, check-in, cleaning and guest support.",
+    "benefits": {
+      "income": "Maximise your income with optimised pricing",
+      "hassle": "Zero worries: full management",
+      "channels": "Presence on major portals plus direct booking",
+      "care": "We care for your home as if it were ours"
+    },
+    "cta": "I'd like more info",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formPhone": "Phone",
+    "formMessage": "Tell us about your property",
+    "formSend": "Send",
+    "formSuccess": "Thank you! We'll be in touch very soon."
+  },
+  "contact": {
+    "eyebrow": "Let's talk",
+    "title": "Get in touch",
+    "subtitle": "Questions about your booking or your next getaway? We're happy to help.",
+    "email": "Email",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "whatsappCta": "Message us on WhatsApp",
+    "follow": "Follow us",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSend": "Send message",
+    "formSuccess": "Thank you! We'll reply as soon as possible."
+  },
+  "footer": {
+    "tagline": "Holiday rentals in La Línea de la Concepción, Cádiz.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "terms": "Legal notice",
+    "rights": "All rights reserved.",
+    "madeIn": "Made with care in La Línea"
+  },
+  "legal": {
+    "noticeTitle": "Legal notice",
+    "privacyTitle": "Privacy policy",
+    "placeholder": "This is sample text. Replace it with your real legal text before going live (owner details, terms of use, data processing, cookies, etc.)."
+  },
+  "apartmentPage": {
+    "backToAll": "Back to apartments",
+    "features": "Features",
+    "bookNow": "Book now",
+    "askWhatsapp": "Ask on WhatsApp",
+    "capacity": "Capacity",
+    "location": "Location",
+    "aboutTitle": "About this accommodation"
+  }
+}
