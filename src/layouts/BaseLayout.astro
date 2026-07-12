@@ -115,7 +115,7 @@ const jsonLd = {
       }
     </script>
 
-    <!-- Envío de formularios: Netlify Forms (AJAX) con fallback a mailto -->
+    <!-- Envío de formularios: FormSubmit (AJAX → email) con fallback a mailto -->
     <script>
       document.querySelectorAll('[data-ajax-form]').forEach((el) => {
         const form = el as HTMLFormElement;
@@ -126,10 +126,20 @@ const jsonLd = {
           const successText = form.dataset.success || '¡Gracias!';
           const mailto = form.dataset.mailto || '';
           try {
-            const res = await fetch('/', {
+            const endpoint = form.dataset.endpoint;
+            if (!endpoint) throw new Error('no-endpoint');
+            const payload: Record<string, string> = {
+              _subject: form.dataset.subject || 'Nuevo mensaje - Rentalsur La Línea',
+              _template: 'table',
+              _captcha: 'false',
+            };
+            data.forEach((v, k) => {
+              if (!k.startsWith('_') && k !== 'bot-field' && k !== 'form-name') payload[k] = String(v);
+            });
+            const res = await fetch(endpoint, {
               method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: new URLSearchParams(data as any).toString(),
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify(payload),
             });
             if (!res.ok) throw new Error('not-ok');
             form.reset();

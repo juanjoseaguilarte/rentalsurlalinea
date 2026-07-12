@@ -35,6 +35,11 @@ export const site = {
     cif: 'B19463165',
   },
 
+  // Backend de formularios: FormSubmit reenvía los envíos al email por AJAX.
+  // ⚠️ El PRIMER envío dispara un correo de activación a ese email: hay que
+  // pulsar el enlace de confirmación una vez para que empiecen a llegar.
+  formEndpoint: 'https://formsubmit.co/ajax/rentalsurlalinea@gmail.com',
+
   social: {
     instagram: 'https://instagram.com/rentalsurlalinea', // PLACEHOLDER
     facebook: 'https://facebook.com/rentalsurlalinea', // PLACEHOLDER

@@ -117,6 +117,7 @@ const config = {
   },
   waIntro: w('waIntro'),
   waNumber: site.contact.whatsapp,
+  endpoint: site.formEndpoint,
   mailto: `mailto:${site.contact.email}?subject=${encodeURIComponent('Gestión de vivienda - Rentalsur La Línea')}`,
 };
 ---
@@ -194,14 +195,6 @@ const config = {
     </a>
   </div>
 
-  <!-- Formulario estático oculto: permite a Netlify Forms detectar los campos en build -->
-  <form name="propietarios" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
-    <input type="hidden" name="form-name" value="propietarios" />
-    <input name="bot-field" /><input name="tipo" /><input name="zona" /><input name="opera" />
-    <input name="portales" /><input name="licencia" /><input name="comunidad" />
-    <input name="disponibilidad" /><input name="nombre" /><input name="telefono" />
-    <input name="email" /><textarea name="mensaje"></textarea><input name="resumen" />
-  </form>
 </div>
 
 <script>
@@ -324,8 +317,10 @@ const config = {
       }
 
       const resumen = summaryText();
-      const params = new URLSearchParams({
-        'form-name': 'propietarios',
+      const payload = {
+        _subject: 'Nuevo propietario interesado - Rentalsur La Línea',
+        _template: 'table',
+        _captcha: 'false',
         tipo: answerLabels.type || '',
         zona: answerLabels.zone || '',
         opera: answerLabels.operating || '',
@@ -338,7 +333,7 @@ const config = {
         email: email.value,
         mensaje: mensaje.value,
         resumen,
-      });
+      };
 
       const showSuccess = () => {
         // Enlace WhatsApp con el resumen prellenado
@@ -354,10 +349,10 @@ const config = {
       };
 
       try {
-        const res = await fetch('/', {
+        const res = await fetch(cfg.endpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: params.toString(),
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error('not-ok');
         showSuccess();

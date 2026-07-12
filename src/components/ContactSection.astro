@@ -73,15 +73,14 @@ const wa = whatsappLink(locale === 'es' ? '¡Hola! Me gustaría más informació
         <form
           name="contacto"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           action={mailto}
           data-ajax-form
+          data-endpoint={site.formEndpoint}
+          data-subject="Nuevo mensaje de contacto - Rentalsur La Línea"
           data-mailto={mailto}
           data-success={t('contact.formSuccess')}
           class="space-y-4"
         >
-          <input type="hidden" name="form-name" value="contacto" />
           <p class="hidden"><label>No rellenar: <input name="bot-field" /></label></p>
 
           <label class="block">
