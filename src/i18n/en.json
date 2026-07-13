@@ -239,6 +239,7 @@
   "building": {
     "units": "Apartments in the building",
     "viewBuilding": "View the whole building",
-    "badge": "Building · 8 apartments"
+    "badge": "Building · {n} apartments",
+    "unitsPending": "The apartment pages will be available very soon. Check availability on our booking engine."
   }
 }

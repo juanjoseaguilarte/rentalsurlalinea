@@ -239,6 +239,7 @@
   "building": {
     "units": "Los apartamentos del edificio",
     "viewBuilding": "Ver el edificio completo",
-    "badge": "Edificio · 8 apartamentos"
+    "badge": "Edificio · {n} apartamentos",
+    "unitsPending": "Las fichas de los apartamentos estarán disponibles muy pronto. Consulta disponibilidad en nuestro motor de reservas."
   }
 }

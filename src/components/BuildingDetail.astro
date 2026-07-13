@@ -15,6 +15,7 @@ const t = useTranslations(locale);
 const backHref = localizedPath('/', locale) + '#apartamentos';
 const bookUrl = bookingHomeUrl(locale);
 const units = buildingUnits(building.slug);
+const badge = t('building.badge').replace('{n}', String(building.unitCount));
 ---
 
 <article class="pt-28 pb-20">
@@ -31,7 +32,7 @@ const units = buildingUnits(building.slug);
       <div>
         <span class="inline-flex items-center gap-1.5 rounded-full bg-sea-50 text-sea-700 text-sm font-semibold px-3 py-1">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1"/></svg>
-          {t('building.badge')}
+          {badge}
         </span>
         <h1 class="mt-4 font-display font-semibold text-3xl sm:text-4xl text-sea-950 leading-tight">
           {building.name}
@@ -51,9 +52,17 @@ const units = buildingUnits(building.slug);
 
     <!-- Unidades -->
     <h2 class="mt-16 font-display font-semibold text-2xl text-sea-950">{t('building.units')}</h2>
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {units.map((property) => <PropertyCard property={property} />)}
-    </div>
+    {
+      units.length > 0 ? (
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {units.map((property) => (
+            <PropertyCard property={property} />
+          ))}
+        </div>
+      ) : (
+        <p class="mt-4 max-w-2xl text-sea-950/60 leading-relaxed">{t('building.unitsPending')}</p>
+      )
+    }
   </div>
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -67,7 +76,7 @@ const units = buildingUnits(building.slug);
       addressRegion: 'Cádiz',
       addressCountry: 'ES',
     },
-    numberOfAccommodationUnits: { '@type': 'QuantitativeValue', value: 8 },
+    numberOfAccommodationUnits: { '@type': 'QuantitativeValue', value: building.unitCount },
     image: building.image,
     url: new URL(Astro.url.pathname, site.url).toString(),
   })} />

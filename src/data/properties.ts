@@ -46,7 +46,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-a1',
     name: 'RockSide Suites A1',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-a1',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-1',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
@@ -85,7 +85,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-a2',
     name: 'RockSide Suites A2',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-a2',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-2',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/2/1574260455.webp',
@@ -163,28 +163,6 @@ export const properties: Property[] = [
     features: {
       es: ['Centro ciudad', 'Gibraltar a 7 min a pie', 'Wi-Fi', 'Check-in flexible 24h'],
       en: ['Town centre', 'Gibraltar 7 min on foot', 'Wi-Fi', 'Flexible 24h check-in'],
-    },
-  },
-  {
-    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
-    slug: 'edificio-manez',
-    name: 'Edificio Mañez',
-    building: 'Edificio Mañez',
-    krossUrl: '',
-    image: '/images/hero.svg',
-    pending: true,
-    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
-    short: {
-      es: 'Apartamentos en el Edificio Mañez, cómodos y bien situados en La Línea.',
-      en: 'Apartments in the Mañez Building, comfortable and well located in La Línea.',
-    },
-    description: {
-      es: 'El Edificio Mañez ofrece apartamentos cómodos y totalmente equipados en La Línea de la Concepción, una base perfecta para disfrutar de las playas, la gastronomía y la cercanía única de Gibraltar. Reserva directa con Rentalsur, sin comisiones y con check-in flexible 24h.',
-      en: 'The Mañez Building offers comfortable, fully equipped apartments in La Línea de la Concepción — a perfect base to enjoy the beaches, the food scene and the unique closeness of Gibraltar. Book direct with Rentalsur, no fees and flexible 24h check-in.',
-    },
-    features: {
-      es: ['Bien situado', 'Totalmente equipado', 'Wi-Fi', 'Check-in flexible 24h'],
-      en: ['Well located', 'Fully equipped', 'Wi-Fi', 'Flexible 24h check-in'],
     },
   },
   {
