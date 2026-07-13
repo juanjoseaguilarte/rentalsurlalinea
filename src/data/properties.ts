@@ -480,13 +480,33 @@ export const properties: Property[] = [
     },
   },
   {
-    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'banqueta',
     name: 'Primera línea de playa y vistas a Gibraltar',
     building: 'Banqueta',
-    krossUrl: '',
-    image: '/images/beach.svg',
-    pending: true,
+    krossUrl: 'https://rentallalinea.kross.travel/primera-lnea-de-playa-y-vistas-a-gibraltar',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111611.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111611.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650829109.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650828903.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650828949.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650829005.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650829040.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650829145.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111629.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650828852.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111587.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111640.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111710.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111635.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111708.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1642111727.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/9/1650829204.webp',
+    ],
+    guests: 6,
+    bedrooms: 2,
+    bathrooms: 1,
     area: { es: 'Primera línea de playa', en: 'Beachfront' },
     short: {
       es: 'Primera línea de playa en La Banqueta, con vistas a Gibraltar.',
@@ -497,8 +517,8 @@ export const properties: Property[] = [
       en: 'Beachfront apartment in the La Banqueta area of La Línea de la Concepción, with views of Gibraltar. The sea in the foreground from the moment you get up, the promenade at your door and the Rock presiding over every sunset. Book direct with Rentalsur, no fees and flexible 24h check-in.',
     },
     features: {
-      es: ['Primera línea de playa', 'Vistas a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
-      en: ['Beachfront', 'Gibraltar views', 'Wi-Fi', 'Flexible 24h check-in'],
+      es: ['Primera línea de playa', 'Vistas a Gibraltar', 'Hasta 6 personas', '2 dormitorios', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['Beachfront', 'Gibraltar views', 'Up to 6 guests', '2 bedrooms', 'Wi-Fi', 'Flexible 24h check-in'],
     },
   },
 ];
