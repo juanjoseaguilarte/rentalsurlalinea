@@ -341,6 +341,48 @@ export const properties: Property[] = [
     },
   },
   {
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
+    slug: 'edificio-manez-bajo',
+    name: 'Edificio Mañez- Bajo',
+    krossUrl: 'https://rentallalinea.kross.travel/edificio-maez-bajo',
+    building: 'Edificio Mañez',
+    buildingSlug: 'edificio-manez',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149869869.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149869869.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822148798648.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149852356.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149864103.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822148777185.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149846100.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149879180.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/1782214878366.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822148753880.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822148791618.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149856349.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/1782214985976.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149842041.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149865519.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17304538453290.webp',
+    ],
+    guests: 4,
+    bedrooms: 1,
+    bathrooms: 1,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Apartamento en planta baja del Edificio Mañez para 4 personas.',
+      en: 'Ground-floor apartment at the Mañez Building for 4 guests.',
+    },
+    description: {
+      es: 'El Bajo del Edificio Mañez es un apartamento cómodo y totalmente equipado en La Línea de la Concepción, con un dormitorio y capacidad para 4 personas. Una base perfecta para disfrutar de las playas, la gastronomía y la cercanía única de Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'The ground floor of the Mañez Building is a comfortable, fully equipped apartment in La Línea de la Concepción, with one bedroom and room for 4 guests. A perfect base to enjoy the beaches, the food scene and the unique closeness of Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Hasta 4 personas', '1 dormitorio', 'Planta baja', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Up to 4 guests', '1 bedroom', 'Ground floor', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+    },
+  },
+  {
     // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
     // Nombre EXACTO del anuncio en Airbnb (SEO).
     slug: 'rocamar',

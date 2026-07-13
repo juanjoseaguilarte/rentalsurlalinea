@@ -35,7 +35,7 @@ export const buildings: Building[] = [
     // ⏳ PENDIENTE: fotos y fichas de sus 3 pisos cuando lleguen los HTML de Kross.
     slug: 'edificio-manez',
     name: 'Edificio Mañez',
-    image: '/images/hero.svg',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/14/17822149869869.webp',
     unitCount: 3,
     short: {
       es: 'Edificio con 3 apartamentos cómodos y bien situados en La Línea.',
