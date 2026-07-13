@@ -490,12 +490,12 @@ export const properties: Property[] = [
       en: 'Right in the centre, with 3 bedrooms for up to 7 guests: Gibraltar 7 minutes on foot.',
     },
     description: {
-      es: 'Apartamento en pleno centro de La Línea de la Concepción, en la calle Méndez Núñez 3, a solo 7 minutos andando de Gibraltar. Comercios, restaurantes y toda la vida de la ciudad en la puerta, y el paso a Gibraltar —ya sin controles— a un paseo. Ideal para turismo y para estancias de trabajo en el Peñón. Reserva directa con Rentalsur.',
-      en: 'Apartment in the heart of La Línea de la Concepción, at Méndez Núñez 3, just a 7-minute walk from Gibraltar. Shops, restaurants and all the city life on your doorstep, and the Gibraltar crossing — now without border checks — a stroll away. Ideal for tourism and for work stays on the Rock. Book direct with Rentalsur.',
+      es: 'Apartamento en pleno centro de La Línea de la Concepción, en la calle Méndez Núñez 3, a solo 7 minutos andando de Gibraltar. Comercios, toda la vida de la ciudad en la puerta y el paso a Gibraltar —ya sin controles— a un paseo. Un plus difícil de superar: en el mismo edificio está uno de los restaurantes mejor valorados de la ciudad, así que la mejor mesa de La Línea la tienes bajando las escaleras. Ideal para turismo y para estancias de trabajo en el Peñón. Reserva directa con Rentalsur.',
+      en: "Apartment in the heart of La Línea de la Concepción, at Méndez Núñez 3, just a 7-minute walk from Gibraltar. Shops and all the city life on your doorstep, and the Gibraltar crossing — now without border checks — a stroll away. A perk that's hard to beat: one of the best-rated restaurants in town is in the very same building, so the best table in La Línea is just down the stairs. Ideal for tourism and for work stays on the Rock. Book direct with Rentalsur.",
     },
     features: {
-      es: ['Centro ciudad', 'Gibraltar a 7 min a pie', 'Hasta 7 personas', '3 dormitorios', 'Wi-Fi', 'Check-in flexible 24h'],
-      en: ['Town centre', 'Gibraltar 7 min on foot', 'Up to 7 guests', '3 bedrooms', 'Wi-Fi', 'Flexible 24h check-in'],
+      es: ['Centro ciudad', 'Gibraltar a 7 min a pie', 'Hasta 7 personas', '3 dormitorios', 'Restaurante top en el edificio', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['Town centre', 'Gibraltar 7 min on foot', 'Up to 7 guests', '3 bedrooms', 'Top-rated restaurant in the building', 'Wi-Fi', 'Flexible 24h check-in'],
     },
   },
   {

@@ -16,6 +16,8 @@ export interface GuideSection {
   fallback?: string;
   imageAlt: Text2;
   creditUrl?: string;
+  /** Enlace opcional destacado bajo el texto (p. ej. web de un sitio recomendado). */
+  link?: { label: Text2; url: string };
 }
 
 export interface Guide {
@@ -289,6 +291,28 @@ export const guides: Guide[] = [
           en: 'Assortment of Andalusian fried fish',
         },
         creditUrl: 'https://commons.wikimedia.org/wiki/File:Pescado_frito_diverso.jpg',
+      },
+      {
+        title: {
+          es: 'El sitio al que siempre mandamos a nuestros huéspedes',
+          en: 'The place we always send our guests to',
+        },
+        text: {
+          es: '¿Que solo tienes una comida en La Línea y no quieres fallar? Nuestra respuesta es siempre la misma: El Rincón de Juan, en pleno centro (calle Méndez Núñez, 3). Jamón cortado a cuchillo al momento, carnes maduradas, atún rojo del Estrecho, un sushi sorprendentemente serio y una bodega para perderse. Y no lo decimos solo nosotros: está entre los restaurantes mejor valorados de toda La Línea, con miles de reseñas que lo avalan. Un consejo de local: reserva mesa, sobre todo el fin de semana.',
+          en: "Only one meal in La Línea and you can't afford to get it wrong? Our answer is always the same: El Rincón de Juan, right in the centre (Calle Méndez Núñez, 3). Hand-carved jamón sliced to order, aged beef, bluefin tuna from the Strait, surprisingly serious sushi and a wine cellar to get lost in. And it's not just us saying it: it ranks among the best-rated restaurants in all of La Línea, backed by thousands of reviews. A local tip: book a table, especially at weekends.",
+        },
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/At%C3%BAn_rojo_a_la_plancha.jpg/1280px-At%C3%BAn_rojo_a_la_plancha.jpg',
+        fallback: '/images/food.svg',
+        imageAlt: {
+          es: 'Atún rojo a la plancha, una de las especialidades del Estrecho',
+          en: 'Grilled bluefin tuna, one of the specialities of the Strait',
+        },
+        creditUrl: 'https://commons.wikimedia.org/wiki/File:At%C3%BAn_rojo_a_la_plancha.jpg',
+        link: {
+          label: { es: 'Ver El Rincón de Juan', en: 'See El Rincón de Juan' },
+          url: 'https://www.elrincondejuan.es/',
+        },
       },
     ],
     cta: {

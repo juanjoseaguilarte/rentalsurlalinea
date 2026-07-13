@@ -65,6 +65,17 @@ const bookingUrl = buildBookingUrl({ locale });
               {s.title[locale]}
             </h2>
             <p class="mt-4 text-sea-950/70 leading-relaxed text-lg">{s.text[locale]}</p>
+            {s.link && (
+              <a
+                href={s.link.url}
+                target="_blank"
+                rel="noopener"
+                class="mt-5 inline-flex items-center gap-2 rounded-full bg-sea-900 hover:bg-sea-700 text-white text-sm font-semibold px-5 py-2.5 transition-colors"
+              >
+                {s.link.label[locale]}
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            )}
             {s.creditUrl && (
               <a href={s.creditUrl} target="_blank" rel="noopener" class="mt-3 inline-block text-xs text-sea-950/40 hover:text-sea-700 underline">
                 {t('guide.photo')}
