@@ -27,8 +27,8 @@ export const buildings: Building[] = [
       en: 'Building with 8 modern apartments next to Gibraltar.',
     },
     description: {
-      es: 'RockSide Suites Residences La Línea es un edificio de 8 apartamentos modernos y totalmente equipados en La Línea de la Concepción, a un paso de Gibraltar. Suites y apartamentos de 1 y 2 dormitorios, perfectos para parejas, familias y estancias de trabajo en el Peñón. Todos con reserva directa, mejor precio garantizado y check-in flexible 24h.',
-      en: 'RockSide Suites Residences La Línea is a building with 8 modern, fully equipped apartments in La Línea de la Concepción, steps from Gibraltar. One and two-bedroom suites and apartments, perfect for couples, families and work stays on the Rock. All with direct booking, best price guaranteed and flexible 24h check-in.',
+      es: 'RockSide Suites Residences La Línea es un edificio de 8 apartamentos modernos y totalmente equipados en La Línea de la Concepción, a un paso de Gibraltar. Estudios y apartamentos de 1 y 2 dormitorios, perfectos para parejas, familias y estancias de trabajo en el Peñón. Todos con reserva directa, mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences La Línea is a building with 8 modern, fully equipped apartments in La Línea de la Concepción, steps from Gibraltar. Studios and one and two-bedroom apartments, perfect for couples, families and work stays on the Rock. All with direct booking, best price guaranteed and flexible 24h check-in.',
     },
   },
   {

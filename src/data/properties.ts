@@ -141,20 +141,19 @@ export const properties: Property[] = [
       'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518649252.webp',
     ],
     guests: 4,
-    bedrooms: 1,
     bathrooms: 1,
     area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
     short: {
-      es: 'Apartamento moderno para 4 personas con 1 dormitorio, junto a Gibraltar.',
-      en: 'Modern apartment for 4 guests with 1 bedroom, next to Gibraltar.',
+      es: 'Estudio moderno para 4 personas, junto a Gibraltar.',
+      en: 'Modern studio for 4 guests, next to Gibraltar.',
     },
     description: {
-      es: 'RockSide Suites Residences Apartamento 3 es un apartamento moderno y totalmente equipado en La Línea de la Concepción, con un dormitorio y capacidad para 4 personas. Perfecto para parejas y familias que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
-      en: 'RockSide Suites Residences Apartamento 3 is a modern, fully equipped apartment in La Línea de la Concepción, with one bedroom and room for 4 guests. Perfect for couples and families looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
+      es: 'RockSide Suites Residences Apartamento 3 es un estudio moderno y totalmente equipado en La Línea de la Concepción, con capacidad para 4 personas. Perfecto para parejas y familias que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 3 is a modern, fully equipped studio in La Línea de la Concepción, with room for 4 guests. Perfect for couples and families looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
     },
     features: {
-      es: ['Hasta 4 personas', '1 dormitorio', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
-      en: ['Up to 4 guests', '1 bedroom', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+      es: ['Estudio', 'Hasta 4 personas', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Studio', 'Up to 4 guests', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
     },
   },
   {
@@ -284,20 +283,19 @@ export const properties: Property[] = [
       'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/6/17749457768600.webp',
     ],
     guests: 4,
-    bedrooms: 1,
     bathrooms: 1,
     area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
     short: {
-      es: 'Apartamento moderno para 4 personas con 1 dormitorio, junto a Gibraltar.',
-      en: 'Modern apartment for 4 guests with 1 bedroom, next to Gibraltar.',
+      es: 'Estudio moderno para 4 personas, junto a Gibraltar.',
+      en: 'Modern studio for 4 guests, next to Gibraltar.',
     },
     description: {
-      es: 'RockSide Suites Residences Apartamento 7 es un apartamento moderno y totalmente equipado en La Línea de la Concepción, con un dormitorio y capacidad para 4 personas, junto a Gibraltar. Perfecto para parejas y familias. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
-      en: 'RockSide Suites Residences Apartamento 7 is a modern, fully equipped apartment in La Línea de la Concepción, with one bedroom and room for 4 guests, next to Gibraltar. Perfect for couples and families. Book direct with the best price guaranteed and flexible 24h check-in.',
+      es: 'RockSide Suites Residences Apartamento 7 es un estudio moderno y totalmente equipado en La Línea de la Concepción, con capacidad para 4 personas, junto a Gibraltar. Perfecto para parejas y familias. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 7 is a modern, fully equipped studio in La Línea de la Concepción, with room for 4 guests, next to Gibraltar. Perfect for couples and families. Book direct with the best price guaranteed and flexible 24h check-in.',
     },
     features: {
-      es: ['Hasta 4 personas', '1 dormitorio', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
-      en: ['Up to 4 guests', '1 bedroom', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+      es: ['Estudio', 'Hasta 4 personas', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Studio', 'Up to 4 guests', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
     },
   },
   {
@@ -461,16 +459,16 @@ export const properties: Property[] = [
     bathrooms: 1,
     area: { es: 'Junto al mar', en: 'By the sea' },
     short: {
-      es: 'Apartamento en el edificio Rocamar, junto al mar y con vistas a Gibraltar.',
-      en: 'Apartment in the Rocamar building, by the sea with views of Gibraltar.',
+      es: 'Estudio en el edificio Rocamar, junto al mar y con vistas a Gibraltar.',
+      en: 'Studio in the Rocamar building, by the sea with views of Gibraltar.',
     },
     description: {
-      es: 'Apartamento junto al mar en el edificio Rocamar de La Línea de la Concepción, con vistas a Gibraltar. Despierta con el Mediterráneo delante y el Peñón en el horizonte: una ubicación difícil de superar para unas vacaciones junto a la playa. Reserva directa con Rentalsur, sin comisiones y con check-in flexible 24h.',
-      en: 'Seafront apartment in the Rocamar building in La Línea de la Concepción, with views of Gibraltar. Wake up with the Mediterranean in front of you and the Rock on the horizon: a location that is hard to beat for a beach holiday. Book direct with Rentalsur, no fees and flexible 24h check-in.',
+      es: 'Estudio junto al mar en el edificio Rocamar de La Línea de la Concepción, con vistas a Gibraltar y capacidad para 4 personas. Despierta con el Mediterráneo delante y el Peñón en el horizonte: una ubicación difícil de superar para unas vacaciones junto a la playa. Reserva directa con Rentalsur, sin comisiones y con check-in flexible 24h.',
+      en: 'Seafront studio in the Rocamar building in La Línea de la Concepción, with views of Gibraltar and room for 4 guests. Wake up with the Mediterranean in front of you and the Rock on the horizon: a location that is hard to beat for a beach holiday. Book direct with Rentalsur, no fees and flexible 24h check-in.',
     },
     features: {
-      es: ['Junto al mar', 'Vistas a Gibraltar', 'Hasta 4 personas', 'Wi-Fi', 'Check-in flexible 24h'],
-      en: ['By the sea', 'Gibraltar views', 'Up to 4 guests', 'Wi-Fi', 'Flexible 24h check-in'],
+      es: ['Estudio', 'Junto al mar', 'Vistas a Gibraltar', 'Hasta 4 personas', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['Studio', 'By the sea', 'Gibraltar views', 'Up to 4 guests', 'Wi-Fi', 'Flexible 24h check-in'],
     },
   },
   {

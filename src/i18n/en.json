@@ -226,7 +226,8 @@
     "askWhatsapp": "Ask on WhatsApp",
     "capacity": "Capacity",
     "location": "Location",
-    "aboutTitle": "About this accommodation"
+    "aboutTitle": "About this accommodation",
+    "backToBuilding": "Back to the building"
   },
   "guide": {
     "back": "Back to home",
