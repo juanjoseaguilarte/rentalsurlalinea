@@ -239,6 +239,32 @@ export const properties: Property[] = [
     },
   },
   {
+    // ✅ Datos reales del motor · ⏳ fotos pendientes (aún no subidas a Kross).
+    slug: 'rockside-suites-residences-apartamento-6',
+    name: 'RockSide Suites Residences Apartamento 6',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-6',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
+    image: '/images/hero.svg',
+    pending: true,
+    guests: 5,
+    bedrooms: 2,
+    bathrooms: 1,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Apartamento con 2 dormitorios para hasta 5 personas, junto a Gibraltar.',
+      en: 'Apartment with 2 bedrooms for up to 5 guests, next to Gibraltar.',
+    },
+    description: {
+      es: 'RockSide Suites Residences Apartamento 6 es un apartamento con dos dormitorios y capacidad para 5 personas, totalmente equipado, en La Línea de la Concepción, junto a Gibraltar. Ideal para familias. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 6 is an apartment with two bedrooms sleeping up to 5 guests, fully equipped, in La Línea de la Concepción, next to Gibraltar. Ideal for families. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Hasta 5 personas', '2 dormitorios', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Up to 5 guests', '2 bedrooms', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+    },
+  },
+  {
     // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
     // Nombre EXACTO del anuncio en Airbnb (SEO).
     slug: 'rocamar',
