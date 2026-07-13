@@ -158,6 +158,29 @@ export const properties: Property[] = [
     },
   },
   {
+    // ⏳ PENDIENTE: fotos y capacidad cuando llegue el HTML de su ficha en Kross.
+    slug: 'rockside-suites-residences-apartamento-4',
+    name: 'RockSide Suites Residences Apartamento 4',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-4',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
+    image: '/images/hero.svg',
+    pending: true,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Apartamento moderno y equipado en RockSide Suites Residences, junto a Gibraltar.',
+      en: 'Modern, fully equipped apartment at RockSide Suites Residences, next to Gibraltar.',
+    },
+    description: {
+      es: 'RockSide Suites Residences Apartamento 4 es un apartamento moderno y totalmente equipado en La Línea de la Concepción, junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 4 is a modern, fully equipped apartment in La Línea de la Concepción, next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+    },
+  },
+  {
     // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
     // Nombre EXACTO del anuncio en Airbnb (SEO).
     slug: 'rocamar',
