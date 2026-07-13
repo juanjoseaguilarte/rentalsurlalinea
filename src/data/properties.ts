@@ -383,6 +383,32 @@ export const properties: Property[] = [
     },
   },
   {
+    // ✅ Datos reales del motor · ⏳ fotos pendientes (aún no subidas a Kross).
+    slug: 'edificio-manez-primero',
+    name: 'Edificio Mañez - Primero',
+    krossUrl: 'https://rentallalinea.kross.travel/edificio-maez-primero',
+    building: 'Edificio Mañez',
+    buildingSlug: 'edificio-manez',
+    image: '/images/hero.svg',
+    pending: true,
+    guests: 6,
+    bedrooms: 2,
+    bathrooms: 1,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Primer piso del Edificio Mañez: 2 dormitorios para hasta 6 personas.',
+      en: 'First floor of the Mañez Building: 2 bedrooms for up to 6 guests.',
+    },
+    description: {
+      es: 'El Primero del Edificio Mañez es un amplio apartamento con dos dormitorios y capacidad para 6 personas, totalmente equipado, en La Línea de la Concepción. Ideal para familias y grupos que quieren disfrutar de las playas, la gastronomía y la cercanía única de Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'The first floor of the Mañez Building is a spacious apartment with two bedrooms sleeping up to 6 guests, fully equipped, in La Línea de la Concepción. Ideal for families and groups wanting the beaches, the food scene and Gibraltar within easy reach. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Hasta 6 personas', '2 dormitorios', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Up to 6 guests', '2 bedrooms', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+    },
+  },
+  {
     // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
     // Nombre EXACTO del anuncio en Airbnb (SEO).
     slug: 'rocamar',
