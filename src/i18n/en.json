@@ -44,7 +44,8 @@
     "bedrooms": "bed.",
     "book": "Book",
     "details": "View details",
-    "viewAll": "See all accommodations"
+    "viewAll": "See all accommodations",
+    "pendingPhotos": "Photos coming soon"
   },
   "services": {
     "eyebrow": "What we offer",
@@ -234,5 +235,10 @@
     "credits": "Photos: Wikimedia Commons (see licence at each link)",
     "photo": "View original photo",
     "more": "Discover more"
+  },
+  "building": {
+    "units": "Apartments in the building",
+    "viewBuilding": "View the whole building",
+    "badge": "Building · 8 apartments"
   }
 }

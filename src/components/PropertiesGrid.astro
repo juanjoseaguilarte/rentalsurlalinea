@@ -1,6 +1,7 @@
 ---
 import { properties } from '../data/properties';
-import { getLocaleFromUrl, useTranslations } from '../i18n/ui';
+import { buildings, buildingUnits } from '../data/buildings';
+import { getLocaleFromUrl, useTranslations, localizedPath } from '../i18n/ui';
 import { buildBookingUrl } from '../config/site';
 import PropertyCard from './PropertyCard.astro';
 import SectionHeading from './SectionHeading.astro';
@@ -8,6 +9,13 @@ import SectionHeading from './SectionHeading.astro';
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 const viewAllUrl = buildBookingUrl({ locale });
+
+// La home muestra: 1 tarjeta por edificio + las propiedades sin edificio.
+// Las unidades (A1, A2…) viven dentro de la página de su edificio.
+const standalone = properties.filter((p) => !p.buildingSlug);
+const buildingPath = (slug: string) =>
+  locale === 'es' ? localizedPath(`/apartamentos/${slug}`, 'es') : localizedPath(`/apartments/${slug}`, 'en');
+const cardCount = buildings.length + standalone.length;
 ---
 
 <section id="apartamentos" class="py-20 sm:py-24 bg-sand-50 scroll-mt-24">
@@ -21,10 +29,40 @@ const viewAllUrl = buildBookingUrl({ locale });
     <div
       class:list={[
         'mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6',
-        properties.length <= 2 ? 'max-w-4xl mx-auto' : 'lg:grid-cols-4',
+        cardCount <= 2 ? 'max-w-4xl mx-auto' : 'lg:grid-cols-3',
       ]}
     >
-      {properties.map((property) => <PropertyCard property={property} />)}
+      {
+        buildings.map((building) => (
+          <article class="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-sea-950/5 shadow-sm hover:shadow-xl transition-shadow duration-300 reveal">
+            <a href={buildingPath(building.slug)} class="relative block aspect-[4/3] overflow-hidden">
+              <img
+                src={building.image}
+                alt={building.name}
+                loading="lazy"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span class="absolute top-3 left-3 rounded-full bg-sea-900/85 backdrop-blur px-3 py-1 text-xs font-semibold text-white">
+                {t('building.badge')}
+              </span>
+            </a>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-display font-semibold text-lg text-sea-950 leading-snug">
+                <a href={buildingPath(building.slug)} class="hover:text-sea-700 transition-colors">{building.name}</a>
+              </h3>
+              <p class="mt-1.5 text-sm text-sea-950/65 leading-relaxed">{building.short[locale]}</p>
+              <div class="mt-auto pt-4 mt-5 border-t border-sea-950/5 flex items-center gap-3">
+                <a
+                  href={buildingPath(building.slug)}
+                  class="flex-1 inline-flex justify-center items-center rounded-full bg-sea-900 hover:bg-sea-700 text-white text-sm font-semibold px-4 py-2.5 transition-colors"
+                  >{t('building.viewBuilding')}</a
+                >
+              </div>
+            </div>
+          </article>
+        ))
+      }
+      {standalone.map((property) => <PropertyCard property={property} />)}
     </div>
 
     <div class="mt-10 flex flex-col items-center gap-3">

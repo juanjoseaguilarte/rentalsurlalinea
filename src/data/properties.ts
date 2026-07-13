@@ -15,9 +15,15 @@ export interface Property {
   image: string;
   /** Galería de fotos (URLs absolutas del CDN de Kross o rutas locales). */
   gallery?: string[];
-  guests: number;
-  bedrooms: number;
-  bathrooms: number;
+  /** Nombre del edificio (SEO/agrupación), p. ej. "RockSide Suites Residences La Línea". */
+  building?: string;
+  /** Slug del edificio en src/data/buildings.ts. */
+  buildingSlug?: string;
+  /** true = aún sin fotos/datos reales del motor ("Fotos próximamente"). */
+  pending?: boolean;
+  guests?: number;
+  bedrooms?: number;
+  bathrooms?: number;
   /** Superficie en m² (opcional). */
   sqm?: number;
   /** Zona/barrio para mostrar y para SEO local. */
@@ -41,6 +47,8 @@ export const properties: Property[] = [
     slug: 'rockside-suites-a1',
     name: 'RockSide Suites A1',
     krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-a1',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
     gallery: [
       'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
@@ -78,6 +86,8 @@ export const properties: Property[] = [
     slug: 'rockside-suites-a2',
     name: 'RockSide Suites A2',
     krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-a2',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/2/1574260455.webp',
     gallery: [
       'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/2/1574260455.webp',
@@ -108,6 +118,95 @@ export const properties: Property[] = [
     features: {
       es: ['60 m²', 'Hasta 5 personas', '2 dormitorios', 'Junto a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
       en: ['60 m²', 'Up to 5 guests', '2 bedrooms', 'Next to Gibraltar', 'Wi-Fi', 'Flexible 24h check-in'],
+    },
+  },
+  {
+    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
+    // Nombre EXACTO del anuncio en Airbnb (SEO).
+    slug: 'rocamar',
+    name: 'Apartamento junto al mar, con vistas Gibraltar',
+    building: 'Rocamar',
+    krossUrl: '',
+    image: '/images/beach.svg',
+    pending: true,
+    area: { es: 'Junto al mar', en: 'By the sea' },
+    short: {
+      es: 'Apartamento en el edificio Rocamar, junto al mar y con vistas a Gibraltar.',
+      en: 'Apartment in the Rocamar building, by the sea with views of Gibraltar.',
+    },
+    description: {
+      es: 'Apartamento junto al mar en el edificio Rocamar de La Línea de la Concepción, con vistas a Gibraltar. Despierta con el Mediterráneo delante y el Peñón en el horizonte: una ubicación difícil de superar para unas vacaciones junto a la playa. Reserva directa con Rentalsur, sin comisiones y con check-in flexible 24h.',
+      en: 'Seafront apartment in the Rocamar building in La Línea de la Concepción, with views of Gibraltar. Wake up with the Mediterranean in front of you and the Rock on the horizon: a location that is hard to beat for a beach holiday. Book direct with Rentalsur, no fees and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Junto al mar', 'Vistas a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['By the sea', 'Gibraltar views', 'Wi-Fi', 'Flexible 24h check-in'],
+    },
+  },
+  {
+    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
+    slug: 'mendez-nunez-3',
+    name: 'Centro ciudad. A 7 minutos andando a Gibraltar',
+    building: 'Méndez Núñez 3',
+    krossUrl: '',
+    image: '/images/hero.svg',
+    pending: true,
+    area: { es: 'Centro', en: 'Town centre' },
+    short: {
+      es: 'En pleno centro, en Méndez Núñez 3: Gibraltar a 7 minutos andando.',
+      en: 'Right in the centre, at Méndez Núñez 3: Gibraltar 7 minutes on foot.',
+    },
+    description: {
+      es: 'Apartamento en pleno centro de La Línea de la Concepción, en la calle Méndez Núñez 3, a solo 7 minutos andando de Gibraltar. Comercios, restaurantes y toda la vida de la ciudad en la puerta, y el paso a Gibraltar —ya sin controles— a un paseo. Ideal para turismo y para estancias de trabajo en el Peñón. Reserva directa con Rentalsur.',
+      en: 'Apartment in the heart of La Línea de la Concepción, at Méndez Núñez 3, just a 7-minute walk from Gibraltar. Shops, restaurants and all the city life on your doorstep, and the Gibraltar crossing — now without border checks — a stroll away. Ideal for tourism and for work stays on the Rock. Book direct with Rentalsur.',
+    },
+    features: {
+      es: ['Centro ciudad', 'Gibraltar a 7 min a pie', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['Town centre', 'Gibraltar 7 min on foot', 'Wi-Fi', 'Flexible 24h check-in'],
+    },
+  },
+  {
+    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
+    slug: 'edificio-manez',
+    name: 'Edificio Mañez',
+    building: 'Edificio Mañez',
+    krossUrl: '',
+    image: '/images/hero.svg',
+    pending: true,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Apartamentos en el Edificio Mañez, cómodos y bien situados en La Línea.',
+      en: 'Apartments in the Mañez Building, comfortable and well located in La Línea.',
+    },
+    description: {
+      es: 'El Edificio Mañez ofrece apartamentos cómodos y totalmente equipados en La Línea de la Concepción, una base perfecta para disfrutar de las playas, la gastronomía y la cercanía única de Gibraltar. Reserva directa con Rentalsur, sin comisiones y con check-in flexible 24h.',
+      en: 'The Mañez Building offers comfortable, fully equipped apartments in La Línea de la Concepción — a perfect base to enjoy the beaches, the food scene and the unique closeness of Gibraltar. Book direct with Rentalsur, no fees and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Bien situado', 'Totalmente equipado', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['Well located', 'Fully equipped', 'Wi-Fi', 'Flexible 24h check-in'],
+    },
+  },
+  {
+    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
+    slug: 'banqueta',
+    name: 'Primera línea de playa y vistas a Gibraltar',
+    building: 'Banqueta',
+    krossUrl: '',
+    image: '/images/beach.svg',
+    pending: true,
+    area: { es: 'Primera línea de playa', en: 'Beachfront' },
+    short: {
+      es: 'Primera línea de playa en La Banqueta, con vistas a Gibraltar.',
+      en: 'Beachfront at La Banqueta, with views of Gibraltar.',
+    },
+    description: {
+      es: 'Apartamento en primera línea de playa en la zona de La Banqueta, en La Línea de la Concepción, con vistas a Gibraltar. El mar como primer plano desde que te levantas, el paseo marítimo en la puerta y el Peñón presidiendo cada atardecer. Reserva directa con Rentalsur, sin comisiones y con check-in flexible 24h.',
+      en: 'Beachfront apartment in the La Banqueta area of La Línea de la Concepción, with views of Gibraltar. The sea in the foreground from the moment you get up, the promenade at your door and the Rock presiding over every sunset. Book direct with Rentalsur, no fees and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Primera línea de playa', 'Vistas a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['Beachfront', 'Gibraltar views', 'Wi-Fi', 'Flexible 24h check-in'],
     },
   },
 ];

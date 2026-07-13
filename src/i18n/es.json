@@ -44,7 +44,8 @@
     "bedrooms": "dorm.",
     "book": "Reservar",
     "details": "Ver detalles",
-    "viewAll": "Ver todos los alojamientos"
+    "viewAll": "Ver todos los alojamientos",
+    "pendingPhotos": "Fotos próximamente"
   },
   "services": {
     "eyebrow": "Lo que te ofrecemos",
@@ -234,5 +235,10 @@
     "credits": "Fotos: Wikimedia Commons (ver licencia en cada enlace)",
     "photo": "Ver foto original",
     "more": "Descubre más"
+  },
+  "building": {
+    "units": "Los apartamentos del edificio",
+    "viewBuilding": "Ver el edificio completo",
+    "badge": "Edificio · 8 apartamentos"
   }
 }

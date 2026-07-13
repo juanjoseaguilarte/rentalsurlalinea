@@ -1,20 +1,32 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ApartmentDetail from '../../../components/ApartmentDetail.astro';
-import { properties } from '../../../data/properties';
+import BuildingDetail from '../../../components/BuildingDetail.astro';
+import { properties, type Property } from '../../../data/properties';
+import { buildings, type Building } from '../../../data/buildings';
 
 export function getStaticPaths() {
-  return properties.map((property) => ({
-    params: { slug: property.slug },
-    props: { property },
-  }));
+  return [
+    ...properties.map((property) => ({
+      params: { slug: property.slug },
+      props: { property, building: undefined as Building | undefined },
+    })),
+    ...buildings.map((building) => ({
+      params: { slug: building.slug },
+      props: { property: undefined as Property | undefined, building },
+    })),
+  ];
 }
 
-const { property } = Astro.props;
-const title = `${property.name} | Rentalsur La Línea`;
-const description = property.short.en;
+const { property, building } = Astro.props;
+
+const title = building
+  ? `${building.name} | Rentalsur La Línea`
+  : `${property!.name}${property!.building && property!.building !== property!.name ? ` · ${property!.building}` : ''} | Rentalsur La Línea`;
+const description = building ? building.short.en : property!.short.en;
+const image = building ? building.image : property!.image;
 ---
 
-<BaseLayout title={title} description={description} image={property.image}>
-  <ApartmentDetail property={property} />
+<BaseLayout title={title} description={description} image={image}>
+  {building ? <BuildingDetail building={building} /> : <ApartmentDetail property={property!} />}
 </BaseLayout>
