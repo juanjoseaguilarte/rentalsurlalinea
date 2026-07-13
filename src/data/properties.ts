@@ -44,8 +44,8 @@ export interface Property {
 export const properties: Property[] = [
   {
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
-    slug: 'rockside-suites-a1',
-    name: 'RockSide Suites A1',
+    slug: 'rockside-suites-residences-apartamento-1',
+    name: 'RockSide Suites Residences Apartamento 1',
     krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-1',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
@@ -73,8 +73,8 @@ export const properties: Property[] = [
       en: 'Modern 40 m² suite for 4 guests, steps from the Rock of Gibraltar.',
     },
     description: {
-      es: 'RockSide Suites A1 es una suite moderna de 40 m² totalmente equipada en La Línea de la Concepción, con capacidad para 4 personas. Perfecta para parejas y familias que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
-      en: 'RockSide Suites A1 is a modern, fully equipped 40 m² suite in La Línea de la Concepción, sleeping up to 4 guests. Perfect for couples and families looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
+      es: 'RockSide Suites Residences Apartamento 1 es una suite moderna de 40 m² totalmente equipada en La Línea de la Concepción, con capacidad para 4 personas. Perfecta para parejas y familias que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 1 is a modern, fully equipped 40 m² suite in La Línea de la Concepción, sleeping up to 4 guests. Perfect for couples and families looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
     },
     features: {
       es: ['40 m²', 'Hasta 4 personas', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
@@ -83,8 +83,8 @@ export const properties: Property[] = [
   },
   {
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
-    slug: 'rockside-suites-a2',
-    name: 'RockSide Suites A2',
+    slug: 'rockside-suites-residences-apartamento-2',
+    name: 'RockSide Suites Residences Apartamento 2',
     krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-2',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
@@ -112,12 +112,49 @@ export const properties: Property[] = [
       en: 'Spacious 60 m² apartment with 2 bedrooms for up to 5 guests.',
     },
     description: {
-      es: 'RockSide Suites A2 es un amplio apartamento de 60 m² con dos dormitorios y capacidad para 5 personas, totalmente equipado, en La Línea de la Concepción. Ideal para familias y grupos que quieren disfrutar de las playas y de Gibraltar a un paso. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
-      en: 'RockSide Suites A2 is a spacious 60 m² apartment with two bedrooms sleeping up to 5 guests, fully equipped, in La Línea de la Concepción. Ideal for families and groups wanting the beaches and Gibraltar within easy reach. Book direct with the best price guaranteed and flexible 24h check-in.',
+      es: 'RockSide Suites Residences Apartamento 2 es un amplio apartamento de 60 m² con dos dormitorios y capacidad para 5 personas, totalmente equipado, en La Línea de la Concepción. Ideal para familias y grupos que quieren disfrutar de las playas y de Gibraltar a un paso. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 2 is a spacious 60 m² apartment with two bedrooms sleeping up to 5 guests, fully equipped, in La Línea de la Concepción. Ideal for families and groups wanting the beaches and Gibraltar within easy reach. Book direct with the best price guaranteed and flexible 24h check-in.',
     },
     features: {
       es: ['60 m²', 'Hasta 5 personas', '2 dormitorios', 'Junto a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
       en: ['60 m²', 'Up to 5 guests', '2 bedrooms', 'Next to Gibraltar', 'Wi-Fi', 'Flexible 24h check-in'],
+    },
+  },
+  {
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
+    slug: 'rockside-suites-residences-apartamento-3',
+    name: 'RockSide Suites Residences Apartamento 3',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-3',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/1616710861.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/1616710861.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/1616711075.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/1616710859.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/1616710921.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518626539.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518625678.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518623468.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518638819.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518637516.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/17304518649252.webp',
+    ],
+    guests: 4,
+    bedrooms: 1,
+    bathrooms: 1,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Apartamento moderno para 4 personas con 1 dormitorio, junto a Gibraltar.',
+      en: 'Modern apartment for 4 guests with 1 bedroom, next to Gibraltar.',
+    },
+    description: {
+      es: 'RockSide Suites Residences Apartamento 3 es un apartamento moderno y totalmente equipado en La Línea de la Concepción, con un dormitorio y capacidad para 4 personas. Perfecto para parejas y familias que buscan comodidad junto a Gibraltar. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 3 is a modern, fully equipped apartment in La Línea de la Concepción, with one bedroom and room for 4 guests. Perfect for couples and families looking for comfort next to Gibraltar. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Hasta 4 personas', '1 dormitorio', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Up to 4 guests', '1 bedroom', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
     },
   },
   {
