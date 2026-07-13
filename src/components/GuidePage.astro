@@ -65,6 +65,16 @@ const bookingUrl = buildBookingUrl({ locale });
               {s.title[locale]}
             </h2>
             <p class="mt-4 text-sea-950/70 leading-relaxed text-lg">{s.text[locale]}</p>
+            {s.quotes && (
+              <ul class="mt-5 space-y-2.5">
+                {s.quotes[locale].map((q) => (
+                  <li class="flex gap-2.5 rounded-2xl bg-sand-50 ring-1 ring-sea-950/5 px-4 py-3 text-sea-950/75 text-[15px] leading-relaxed">
+                    <span class="text-sunset-500 font-display font-bold text-xl leading-none select-none">“</span>
+                    <span class="italic">{q}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
             {s.link && (
               <a
                 href={s.link.url}

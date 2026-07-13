@@ -18,6 +18,8 @@ export interface GuideSection {
   creditUrl?: string;
   /** Enlace opcional destacado bajo el texto (p. ej. web de un sitio recomendado). */
   link?: { label: Text2; url: string };
+  /** Citas breves (p. ej. reseñas públicas reales) mostradas como testimonios. */
+  quotes?: { es: string[]; en: string[] };
 }
 
 export interface Guide {
@@ -215,100 +217,113 @@ export const guides: Guide[] = [
     key: 'food',
     slug: 'gastronomia',
     title: {
-      es: 'Gastronomía de La Línea: el sabor del Estrecho en cada plato',
-      en: 'La Línea food: the taste of the Strait on every plate',
+      es: 'Dónde comer en La Línea: El Rincón de Juan',
+      en: 'Where to eat in La Línea: El Rincón de Juan',
     },
     metaDescription: {
-      es: 'Pescaíto frito de La Atunara, atún del Estrecho, tapas con solera y hasta fish & chips a un paseo: comer en La Línea de la Concepción es un viaje en sí mismo.',
-      en: "Fried fish from La Atunara, tuna from the Strait, classic tapas and even fish & chips a stroll away: eating in La Línea de la Concepción is a journey in itself.",
+      es: 'El Rincón de Juan (calle Méndez Núñez 3, La Línea): jamón de bellota cortado a cuchillo, atún rojo salvaje del Estrecho, carnes maduradas y sushi. 4,6/5 y nº 2 de la ciudad en Tripadvisor. Nuestra recomendación para comer en La Línea de la Concepción.',
+      en: 'El Rincón de Juan (Calle Méndez Núñez 3, La Línea): hand-carved acorn-fed jamón, wild bluefin tuna from the Strait, aged beef and sushi. 4.6/5 and #2 in town on Tripadvisor. Our recommendation for eating out in La Línea de la Concepción.',
     },
     hero: {
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Pescado_frito_diverso.jpg/1280px-Pescado_frito_diverso.jpg',
       fallback: '/images/food.svg',
       alt: {
-        es: 'Pescaíto frito variado, plato típico andaluz',
-        en: 'Assorted Andalusian fried fish',
+        es: 'Gastronomía andaluza en La Línea de la Concepción',
+        en: 'Andalusian cuisine in La Línea de la Concepción',
       },
       creditUrl: 'https://commons.wikimedia.org/wiki/File:Pescado_frito_diverso.jpg',
     },
     intro: {
-      es: 'En La Línea se come como en pocos sitios, y no lo decimos nosotros: lo dice el mar. El pescado entra cada día por la lonja de La Atunara y a las pocas horas está en tu mesa, frito, a la plancha o en tapas que quitan el sentido. Añádele el ambiente andaluz, precios sin sustos y la posibilidad de cenar británico cruzando la frontera: aquí cada comida es un plan.',
-      en: "Few places eat like La Línea, and it's not us saying it: it's the sea. Fish comes in every day through La Atunara's market and within hours it's on your table — fried, grilled or in tapas that will blow you away. Add the Andalusian atmosphere, prices with no nasty surprises and the option of a British dinner across the border: here, every meal is a plan.",
+      es: 'En La Línea se come de maravilla: pescaíto, tapas, cocina del Estrecho… Pero cuando nuestros huéspedes nos piden UN sitio que no falle, la respuesta lleva años siendo la misma: El Rincón de Juan, en pleno centro, en la calle Méndez Núñez 3. Aquí te contamos por qué es la mesa más segura de tu escapada — y por qué conviene reservar.',
+      en: "You eat wonderfully in La Línea: fried fish, tapas, cooking from the Strait… But when our guests ask us for THE one place that never fails, the answer has been the same for years: El Rincón de Juan, right in the centre at Calle Méndez Núñez 3. Here's why it's the safest table of your stay — and why you should book ahead.",
     },
     sections: [
       {
         title: {
-          es: 'Pescaíto frito: la religión local',
-          en: 'Pescaíto frito: the local religion',
+          es: 'Desde 2003, calidad y sabor en cada detalle',
+          en: 'Since 2003, quality and flavour in every detail',
         },
         text: {
-          es: 'Boquerones, puntillitas, acedías, tortillitas de camarones… El pescaíto frito es la seña de identidad de la bahía y en La Línea se borda: rebozado ligero, aceite de oliva y producto recién desembarcado. Pídelo en un chiringuito de La Atunara con el mar de fondo y entenderás por qué los gaditanos no lo cambian por nada.',
-          en: "Anchovies, baby squid, wedge sole, shrimp fritters… Fried fish is the identity of the bay and La Línea nails it: light batter, olive oil and produce fresh off the boat. Order it at a beach bar in La Atunara with the sea in the background and you'll see why people here wouldn't trade it for anything.",
+          es: 'Más de veinte años avalan esta casa, que apuesta por producto de excelencia: jamón de bellota de brida negra cortado a cuchillo al momento, atún rojo salvaje del Estrecho (JC Mackintosh), carnes maduradas, sushi fresco hecho con criterio y una cuidada selección de verduras. Todo ello con una bodega seria — no en vano lo llaman The Wine Bar — y tres espacios para elegir según el plan: terraza, barra e interior.',
+          en: "More than twenty years back this house, built on outstanding produce: acorn-fed brida negra jamón hand-carved to order, wild bluefin tuna from the Strait (JC Mackintosh), aged beef, fresh sushi made with real craft and a careful selection of vegetables. All backed by a serious wine cellar — they don't call it The Wine Bar for nothing — and three spaces to choose from depending on the plan: terrace, bar and dining room.",
+        },
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/At%C3%BAn_rojo_a_la_plancha.jpg/1280px-At%C3%BAn_rojo_a_la_plancha.jpg',
+        fallback: '/images/food.svg',
+        imageAlt: {
+          es: 'Atún rojo a la plancha, especialidad del Estrecho',
+          en: 'Grilled bluefin tuna, a speciality of the Strait',
+        },
+        creditUrl: 'https://commons.wikimedia.org/wiki/File:At%C3%BAn_rojo_a_la_plancha.jpg',
+      },
+      {
+        title: {
+          es: 'No lo decimos nosotros: 4,6 sobre 5',
+          en: "Don't take our word for it: 4.6 out of 5",
+        },
+        text: {
+          es: 'Es el nº 2 de los 194 restaurantes de La Línea en Tripadvisor, con más de 500 opiniones y notas de 4,7 tanto en comida como en servicio. Las reseñas hablan solas:',
+          en: "It ranks #2 of the 194 restaurants in La Línea on Tripadvisor, with more than 500 reviews and 4.7 scores for both food and service. The reviews speak for themselves:",
+        },
+        quotes: {
+          es: [
+            'Sitio de 10 y espectacular. Hemos vuelto a ir… porque se lo merecen.',
+            'El servicio es muy atento y la comida espectacular. Sus sushis son exquisitos. Un sitio top.',
+            'Experiencia de 10. Tanto la atención como la comida… El sitio muy bonito, muy limpio y cuidado.',
+          ],
+          en: [
+            'A 10 out of 10, spectacular. We went back… because they deserve it.',
+            'Very attentive service and spectacular food. Their sushi is exquisite. A top spot.',
+            'A 10/10 experience. Both the service and the food… The place is lovely, spotless and well cared for.',
+          ],
         },
         image:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Pescado_adobado%2C_rebozado_y_frito.jpg/1280px-Pescado_adobado%2C_rebozado_y_frito.jpg',
         fallback: '/images/food.svg',
         imageAlt: {
-          es: 'Pescado en adobo rebozado y frito, tapa andaluza',
-          en: 'Marinated, battered and fried fish, an Andalusian tapa',
+          es: 'Tapa andaluza de pescado en adobo',
+          en: 'Andalusian marinated fried fish tapa',
         },
         creditUrl:
           'https://commons.wikimedia.org/wiki/File:Pescado_adobado,_rebozado_y_frito.jpg',
       },
       {
         title: {
-          es: 'Atún del Estrecho y cocina de lonja',
-          en: 'Tuna from the Strait and market-fresh cooking',
+          es: 'Qué pedir (según sus clientes)',
+          en: 'What to order (according to its regulars)',
         },
         text: {
-          es: 'Estás en la provincia del atún rojo salvaje, el que se pesca desde hace tres mil años con el arte de la almadraba. En los bares y restaurantes linenses lo encontrarás en tartar, en tataki o a la plancha, junto a urta, borriquete y otras joyas de la lonja. Cocina honesta, de producto, a precios que en otras costas ya no existen.',
-          en: "You're in the province of wild bluefin tuna, caught for three thousand years using the ancient almadraba technique. In La Línea's bars and restaurants you'll find it as tartare, tataki or grilled, alongside sea bream and other treasures from the fish market. Honest, product-first cooking at prices that no longer exist on other coasts.",
-        },
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/At%C3%BAn_rojo_a_la_plancha.jpg/1280px-At%C3%BAn_rojo_a_la_plancha.jpg',
-        fallback: '/images/food.svg',
-        imageAlt: {
-          es: 'Atún rojo a la plancha, especialidad de la provincia de Cádiz',
-          en: 'Grilled bluefin tuna, a Cádiz province speciality',
-        },
-        creditUrl: 'https://commons.wikimedia.org/wiki/File:At%C3%BAn_rojo_a_la_plancha.jpg',
-      },
-      {
-        title: {
-          es: 'De tapas por La Línea (con postre en otro país)',
-          en: 'Tapas in La Línea (with dessert in another country)',
-        },
-        text: {
-          es: 'El centro de La Línea vive de bar en bar: cañas bien tiradas, tapas generosas, terrazas al sol y sobremesas largas, como manda Andalucía. Y cuando quieras cambiar de tercio, cruza a Gibraltar a por un té con scones o un pie británico. Dos gastronomías, una caminata de diez minutos. Eso no lo tiene ningún otro destino.',
-          en: "La Línea's centre lives from bar to bar: perfectly poured beers, generous tapas, sunny terraces and long, lazy lunches, the Andalusian way. And when you fancy a change, cross into Gibraltar for tea with scones or a British pie. Two cuisines, one ten-minute walk. No other destination has that.",
+          es: 'Si es tu primera visita, ve a lo que más aplauden las reseñas: el tartar de atún rojo, los makis y el sushi, las albóndigas de solomillo de vaca y, por supuesto, el jamón cortado a cuchillo delante de ti. Los carnívoros tienen su fiesta con las carnes maduradas y las hamburguesas de la casa, y para el final quedan las tartas de Nutella y de Oreo. Déjate aconsejar con el vino: los camareros saben lo que hacen.',
+          en: "If it's your first visit, go for what the reviews applaud the most: the bluefin tuna tartare, the maki rolls and sushi, the beef tenderloin meatballs and, of course, the jamón hand-carved right in front of you. Meat lovers get their feast with the aged beef and the house burgers, and save room for the Nutella and Oreo cakes. Let them guide you on the wine: the waiters know their stuff.",
         },
         image:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Pescado_frito_diverso.jpg/1280px-Pescado_frito_diverso.jpg',
         fallback: '/images/food.svg',
         imageAlt: {
-          es: 'Surtido de pescaíto frito andaluz',
-          en: 'Assortment of Andalusian fried fish',
+          es: 'Surtido de platos andaluces',
+          en: 'Assortment of Andalusian dishes',
         },
         creditUrl: 'https://commons.wikimedia.org/wiki/File:Pescado_frito_diverso.jpg',
       },
       {
         title: {
-          es: 'El sitio al que siempre mandamos a nuestros huéspedes',
-          en: 'The place we always send our guests to',
+          es: 'Información práctica (y un truco de local)',
+          en: 'Practical info (and a local trick)',
         },
         text: {
-          es: '¿Que solo tienes una comida en La Línea y no quieres fallar? Nuestra respuesta es siempre la misma: El Rincón de Juan, en pleno centro (calle Méndez Núñez, 3). Jamón cortado a cuchillo al momento, carnes maduradas, atún rojo del Estrecho, un sushi sorprendentemente serio y una bodega para perderse. Y no lo decimos solo nosotros: está entre los restaurantes mejor valorados de toda La Línea, con miles de reseñas que lo avalan. Un consejo de local: reserva mesa, sobre todo el fin de semana.',
-          en: "Only one meal in La Línea and you can't afford to get it wrong? Our answer is always the same: El Rincón de Juan, right in the centre (Calle Méndez Núñez, 3). Hand-carved jamón sliced to order, aged beef, bluefin tuna from the Strait, surprisingly serious sushi and a wine cellar to get lost in. And it's not just us saying it: it ranks among the best-rated restaurants in all of La Línea, backed by thousands of reviews. A local tip: book a table, especially at weekends.",
+          es: 'Lo encontrarás en la calle Méndez Núñez 3, en pleno centro y a un paseo de todos nuestros apartamentos — de hecho, nuestro alojamiento de Méndez Núñez 3 está en el mismo edificio: cenas y subes a dormir. Abre todos los días, con comidas de 12:00 a 16:00 y cenas de 20:00 hasta cerca de la medianoche. El truco de local: reserva mesa, sobre todo el fin de semana, en el +34 678 40 12 53. Y si el plan es de sofá, también tienen reparto a domicilio.',
+          en: "You'll find it at Calle Méndez Núñez 3, right in the centre and a stroll from all our apartments — in fact, our Méndez Núñez 3 apartment is in the very same building: have dinner and walk upstairs to bed. Open every day, with lunch from 12:00 to 16:00 and dinner from 20:00 until close to midnight. The local trick: book a table, especially at weekends, on +34 678 40 12 53. And if it's a sofa kind of night, they deliver too.",
         },
         image:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/At%C3%BAn_rojo_a_la_plancha.jpg/1280px-At%C3%BAn_rojo_a_la_plancha.jpg',
-        fallback: '/images/food.svg',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Iglesia_de_la_Inmaculada_en_La_L%C3%ADnea_de_la_Concepci%C3%B3n_2.jpg/1280px-Iglesia_de_la_Inmaculada_en_La_L%C3%ADnea_de_la_Concepci%C3%B3n_2.jpg',
+        fallback: '/images/hero.svg',
         imageAlt: {
-          es: 'Atún rojo a la plancha, una de las especialidades del Estrecho',
-          en: 'Grilled bluefin tuna, one of the specialities of the Strait',
+          es: 'El centro de La Línea de la Concepción, junto a la iglesia de la Inmaculada',
+          en: 'The centre of La Línea de la Concepción, by the Church of the Immaculate Conception',
         },
-        creditUrl: 'https://commons.wikimedia.org/wiki/File:At%C3%BAn_rojo_a_la_plancha.jpg',
+        creditUrl:
+          'https://commons.wikimedia.org/wiki/File:Iglesia_de_la_Inmaculada_en_La_L%C3%ADnea_de_la_Concepci%C3%B3n_2.jpg',
         link: {
           label: { es: 'Ver El Rincón de Juan', en: 'See El Rincón de Juan' },
           url: 'https://www.elrincondejuan.es/',
@@ -316,8 +331,8 @@ export const guides: Guide[] = [
       },
     ],
     cta: {
-      es: 'Ven con hambre: tu mesa junto al mar te espera.',
-      en: 'Come hungry: your table by the sea is waiting.',
+      es: 'Reserva tu apartamento y ven con hambre: la mejor mesa de La Línea te espera a un paseo.',
+      en: "Book your apartment and come hungry: La Línea's best table is a stroll away.",
     },
   },
   {
