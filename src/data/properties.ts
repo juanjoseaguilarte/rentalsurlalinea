@@ -301,6 +301,46 @@ export const properties: Property[] = [
     },
   },
   {
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
+    slug: 'rockside-suites-residences-apartamento-8',
+    name: 'RockSide Suites Residences Apartamento 8',
+    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-8',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362942.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362942.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362947.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362991.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362997.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362935.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362938.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362987.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362988.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688363007.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688363014.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688363018.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688363029.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688363033.webp',
+    ],
+    guests: 6,
+    bedrooms: 2,
+    bathrooms: 1,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Amplio apartamento con 2 dormitorios para hasta 6 personas, junto a Gibraltar.',
+      en: 'Spacious apartment with 2 bedrooms for up to 6 guests, next to Gibraltar.',
+    },
+    description: {
+      es: 'RockSide Suites Residences Apartamento 8 es un amplio apartamento con dos dormitorios y capacidad para 6 personas, totalmente equipado, en La Línea de la Concepción, junto a Gibraltar. Perfecto para familias y grupos. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 8 is a spacious apartment with two bedrooms sleeping up to 6 guests, fully equipped, in La Línea de la Concepción, next to Gibraltar. Perfect for families and groups. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Hasta 6 personas', '2 dormitorios', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Up to 6 guests', '2 bedrooms', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+    },
+  },
+  {
     // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
     // Nombre EXACTO del anuncio en Airbnb (SEO).
     slug: 'rocamar',
