@@ -203,6 +203,42 @@ export const properties: Property[] = [
     },
   },
   {
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
+    slug: 'rockside-suites-residences-apartamento-5',
+    name: 'RockSide Suites Residences Apartamento 5',
+    krossUrl: 'https://rentallalinea.kross.travel/apartamento-5',
+    building: 'RockSide Suites Residences La Línea',
+    buildingSlug: 'rockside-suites-residences',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793442.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793442.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793457.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793432.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793452.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793440.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793461.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793474.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793482.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793485.webp',
+    ],
+    guests: 6,
+    bedrooms: 2,
+    bathrooms: 1,
+    area: { es: 'La Línea de la Concepción', en: 'La Línea de la Concepción' },
+    short: {
+      es: 'Amplio apartamento con 2 dormitorios para hasta 6 personas, junto a Gibraltar.',
+      en: 'Spacious apartment with 2 bedrooms for up to 6 guests, next to Gibraltar.',
+    },
+    description: {
+      es: 'RockSide Suites Residences Apartamento 5 es un amplio apartamento con dos dormitorios y capacidad para 6 personas, totalmente equipado, en La Línea de la Concepción, junto a Gibraltar. Perfecto para familias y grupos. Reserva directa con el mejor precio garantizado y check-in flexible 24h.',
+      en: 'RockSide Suites Residences Apartamento 5 is a spacious apartment with two bedrooms sleeping up to 6 guests, fully equipped, in La Línea de la Concepción, next to Gibraltar. Perfect for families and groups. Book direct with the best price guaranteed and flexible 24h check-in.',
+    },
+    features: {
+      es: ['Hasta 6 personas', '2 dormitorios', 'Junto a Gibraltar', 'Wi-Fi', 'Aire acondicionado', 'Check-in flexible 24h'],
+      en: ['Up to 6 guests', '2 bedrooms', 'Next to Gibraltar', 'Wi-Fi', 'Air conditioning', 'Flexible 24h check-in'],
+    },
+  },
+  {
     // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
     // Nombre EXACTO del anuncio en Airbnb (SEO).
     slug: 'rocamar',
