@@ -435,14 +435,30 @@ export const properties: Property[] = [
     },
   },
   {
-    // ⏳ PENDIENTE: fotos y datos reales cuando llegue el HTML de su ficha en Kross.
-    // Nombre EXACTO del anuncio en Airbnb (SEO).
+    // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rocamar',
     name: 'Apartamento junto al mar, con vistas Gibraltar',
     building: 'Rocamar',
-    krossUrl: '',
-    image: '/images/beach.svg',
-    pending: true,
+    krossUrl: 'https://rentallalinea.kross.travel/apartamento-junto-al-mar-con-vistas-gibraltar',
+    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794157303.webp',
+    gallery: [
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794157303.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794154779.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794157502.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794164532.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794161174.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17653794169520.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17673347486138.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17673347485681.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17726312309784.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17726312305734.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17726312313866.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17726312325893.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17726312328327.webp',
+      'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/8/17726312322196.webp',
+    ],
+    guests: 4,
+    bathrooms: 1,
     area: { es: 'Junto al mar', en: 'By the sea' },
     short: {
       es: 'Apartamento en el edificio Rocamar, junto al mar y con vistas a Gibraltar.',
@@ -453,8 +469,8 @@ export const properties: Property[] = [
       en: 'Seafront apartment in the Rocamar building in La Línea de la Concepción, with views of Gibraltar. Wake up with the Mediterranean in front of you and the Rock on the horizon: a location that is hard to beat for a beach holiday. Book direct with Rentalsur, no fees and flexible 24h check-in.',
     },
     features: {
-      es: ['Junto al mar', 'Vistas a Gibraltar', 'Wi-Fi', 'Check-in flexible 24h'],
-      en: ['By the sea', 'Gibraltar views', 'Wi-Fi', 'Flexible 24h check-in'],
+      es: ['Junto al mar', 'Vistas a Gibraltar', 'Hasta 4 personas', 'Wi-Fi', 'Check-in flexible 24h'],
+      en: ['By the sea', 'Gibraltar views', 'Up to 4 guests', 'Wi-Fi', 'Flexible 24h check-in'],
     },
   },
   {
