@@ -17,3 +17,8 @@ pnpm-debug.log*
 # jetbrains / vscode
 .idea/
 .vscode/
+# trading: caché de velas y artefactos de python
+trading/data_cache/
+__pycache__/
+*.pyc
+.pytest_cache/

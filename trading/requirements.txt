@@ -1,0 +1,6 @@
+pandas>=2.0
+requests>=2.28
+
+# Opcionales
+# matplotlib>=3.7   # comando `chart`
+# pytest>=7.0       # tests
