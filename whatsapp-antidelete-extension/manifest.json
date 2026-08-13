@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "WA Anti-Delete - Ver mensajes eliminados",
+  "version": "1.0.0",
+  "description": "Guarda los mensajes que aparecen en WhatsApp Web y vuelve a mostrarlos cuando el remitente los elimina.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WA Anti-Delete: registro de mensajes eliminados"
+  }
+}

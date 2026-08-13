@@ -1,0 +1,25 @@
+.wa-antidelete-restored {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-left: 3px solid #25d366;
+  border-radius: 6px;
+  background: rgba(37, 211, 102, 0.12);
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: inherit;
+}
+
+.wa-antidelete-tag {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #25d366;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.wa-antidelete-body {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
