@@ -20,7 +20,7 @@ export const buildings: Building[] = [
   {
     slug: 'rockside-suites-residences',
     name: 'RockSide Suites Residences La Línea',
-    image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
+    image: '/images/ap1/ap1-13.webp',
     unitCount: 8,
     short: {
       es: 'Edificio de 8 apartamentos modernos junto a Gibraltar.',
