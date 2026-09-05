@@ -46,7 +46,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-1',
     name: 'RockSide Suites Residences Apartamento 1',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-1',
+    krossUrl: 'https://rentallalinea.kross.travel/a1-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/1/1775746156131.webp',
@@ -85,7 +85,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-2',
     name: 'RockSide Suites Residences Apartamento 2',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-2',
+    krossUrl: 'https://rentallalinea.kross.travel/a2-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/2/1574260455.webp',
@@ -124,7 +124,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-3',
     name: 'RockSide Suites Residences Apartamento 3',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-3',
+    krossUrl: 'https://rentallalinea.kross.travel/a3-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/3/1616710861.webp',
@@ -160,7 +160,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-4',
     name: 'RockSide Suites Residences Apartamento 4',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-4',
+    krossUrl: 'https://rentallalinea.kross.travel/a4-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/5/17822131353363.webp',
@@ -205,7 +205,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-5',
     name: 'RockSide Suites Residences Apartamento 5',
-    krossUrl: 'https://rentallalinea.kross.travel/apartamento-5',
+    krossUrl: 'https://rentallalinea.kross.travel/a5-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/7/1641793442.webp',
@@ -241,7 +241,7 @@ export const properties: Property[] = [
     // ✅ Datos reales del motor · ⏳ fotos pendientes (aún no subidas a Kross).
     slug: 'rockside-suites-residences-apartamento-6',
     name: 'RockSide Suites Residences Apartamento 6',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-6',
+    krossUrl: 'https://rentallalinea.kross.travel/a6-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: '/images/hero.svg',
@@ -267,7 +267,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-7',
     name: 'RockSide Suites Residences Apartamento 7',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-7',
+    krossUrl: 'https://rentallalinea.kross.travel/a7-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/6/17749457737655.webp',
@@ -302,7 +302,7 @@ export const properties: Property[] = [
     // ✅ PROPIEDAD REAL — datos y fotos importados de la ficha del motor Kross.
     slug: 'rockside-suites-residences-apartamento-8',
     name: 'RockSide Suites Residences Apartamento 8',
-    krossUrl: 'https://rentallalinea.kross.travel/rockside-suites-residences-apartamento-8',
+    krossUrl: 'https://rentallalinea.kross.travel/a8-rockside-suites-residences',
     building: 'RockSide Suites Residences La Línea',
     buildingSlug: 'rockside-suites-residences',
     image: 'https://cdn.krossbooking.com/juanjoseaguilarteviegas/images/3/4/1688362942.webp',
