@@ -35,10 +35,23 @@ export function localizedPath(path: string, locale: Locale): string {
 }
 
 /** Dada la URL actual, devuelve la ruta equivalente en el otro idioma. */
+// Segmentos de ruta que cambian de nombre entre idiomas.
+const esToEnSegment: Record<string, string> = {
+  terminos: 'terms',
+  privacidad: 'privacy',
+  apartamentos: 'apartments',
+};
+const enToEsSegment: Record<string, string> = Object.fromEntries(
+  Object.entries(esToEnSegment).map(([es, en]) => [en, es])
+);
+
 export function alternatePath(url: URL, target: Locale): string {
   let path = url.pathname;
   // quitar prefijo /en si existe
   if (path === '/en' || path === '/en/') path = '/';
   else if (path.startsWith('/en/')) path = path.slice(3);
+  // traducir el primer segmento si tiene nombre distinto en cada idioma
+  const map = target === 'en' ? esToEnSegment : enToEsSegment;
+  path = path.replace(/^\/([^/]+)/, (m, seg) => (map[seg] ? `/${map[seg]}` : m));
   return localizedPath(path, target);
 }

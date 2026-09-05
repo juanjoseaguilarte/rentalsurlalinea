@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada | Rentalsur La Línea"
+  description="La página que buscas no existe. Te llevamos a la portada de Rentalsur La Línea."
+  noindex
+>
+  <!-- Redirección automática a la portada -->
+  <meta http-equiv="refresh" content="2;url=/" />
+  <section class="pt-40 pb-24 text-center container-page">
+    <p class="font-display font-bold text-6xl text-sea-200">404</p>
+    <h1 class="mt-4 font-display font-semibold text-2xl text-sea-950">
+      Esta página no existe · This page doesn't exist
+    </h1>
+    <p class="mt-3 text-sea-950/60">
+      Te llevamos a la portada en un momento… · Taking you to the home page…
+    </p>
+    <a
+      href="/"
+      class="mt-8 inline-flex items-center gap-2 rounded-full bg-sunset-500 hover:bg-sunset-600 text-white font-semibold px-6 py-3 transition-colors"
+    >
+      Ir al inicio · Go home
+    </a>
+  </section>
+  <script>
+    // Redirección inmediata como refuerzo del meta refresh
+    setTimeout(() => window.location.replace('/'), 2000);
+  </script>
+</BaseLayout>

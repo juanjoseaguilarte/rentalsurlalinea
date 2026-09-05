@@ -12,9 +12,11 @@ interface Props {
   /** Ruta canónica de la página (sin dominio), p. ej. "/apartamentos/xxx". */
   path?: string;
   image?: string;
+  /** true = pedir a los buscadores que no indexen la página (p. ej. 404). */
+  noindex?: boolean;
 }
 
-const { title, description, image = '/images/hero.svg' } = Astro.props;
+const { title, description, image = '/images/hero.svg', noindex = false } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 
@@ -59,6 +61,7 @@ const jsonLd = {
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="alternate" hreflang="es" href={esHref} />
     <link rel="alternate" hreflang="en" href={enHref} />
     <link rel="alternate" hreflang="x-default" href={esHref} />
